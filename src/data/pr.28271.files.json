@@ -1,0 +1,63 @@
+{
+  "changedFiles": 4,
+  "additions": 125,
+  "deletions": 42,
+  "files": [
+    {
+      "path": "packages/react-dom/client.js",
+      "status": "modified",
+      "additions": 50,
+      "deletions": 10,
+      "hunks": [
+        {
+          "header": "@@ -1,5 +1,6 @@",
+          "lines": [
+            {
+              "type": "context",
+              "content": " import {createRoot} from \"react-dom\";"
+            },
+            {
+              "type": "addition",
+              "content": "+import {hydrateRoot} from \"react-dom/client\";"
+            },
+            {
+              "type": "deletion",
+              "content": "-import {hydrate} from \"react-dom\";"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "packages/react-dom/index.js",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 32,
+      "hunks": [
+        {
+          "header": "@@ -20,10 +20,4 @@",
+          "lines": [
+            {
+              "type": "deletion",
+              "content": "-export {createRoot, hydrateRoot};"
+            },
+            {
+              "type": "addition",
+              "content": "+// Moved to react-dom/client"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "intents": [
+    {
+      "name": "Moved exports to client",
+      "description": "Refactoring react-dom entry points to separate client and server APIs.",
+      "files": [
+        "packages/react-dom/client.js",
+        "packages/react-dom/index.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "user": "shadcn",
+  "activeUsage": {
+    "usedHours": 24,
+    "totalHours": 60,
+    "storageGb": 8.4,
+    "storageLimitGb": 15.0
+  },
+  "codespaces": [
+    {
+      "id": "cs_01hjk98",
+      "name": "glowing-eureka-7vx5w",
+      "displayName": "React 19 Canary Playground",
+      "repo": "facebook/react",
+      "branch": "main",
+      "state": "Running",
+      "lastUsed": "10 minutes ago",
+      "createdAt": "2024-03-20T12:00:00Z",
+      "machine": {
+        "cores": 4,
+        "ramGb": 16,
+        "storageGb": 32,
+        "type": "Standard 4-core (16GB RAM)"
+      },
+      "location": "US East (N. Virginia)",
+      "collaboratorsCount": 2
+    },
+    {
+      "id": "cs_02mno45",
+      "name": "fluffy-disco-9q12p",
+      "displayName": "shadcn/ui Component Lab",
+      "repo": "shadcn/ui",
+      "branch": "feat/neo-brutalist",
+      "state": "Available",
+      "lastUsed": "2 days ago",
+      "createdAt": "2024-03-15T09:30:00Z",
+      "machine": {
+        "cores": 2,
+        "ramGb": 8,
+        "storageGb": 32,
+        "type": "Basic 2-core (8GB RAM)"
+      },
+      "location": "Europe West (Frankfurt)",
+      "collaboratorsCount": 0
+    },
+    {
+      "id": "cs_03xyz78",
+      "name": "turbo-guacamole-3k45l",
+      "displayName": "Cyfernode Rebrand v2 Prototype",
+      "repo": "cyfernode/studio",
+      "branch": "brand-v2",
+      "state": "Shutdown",
+      "lastUsed": "5 days ago",
+      "createdAt": "2024-03-10T14:15:00Z",
+      "machine": {
+        "cores": 8,
+        "ramGb": 32,
+        "storageGb": 64,
+        "type": "Performance 8-core (32GB RAM)"
+      },
+      "location": "US West (Oregon)",
+      "collaboratorsCount": 1
+    },
+    {
+      "id": "cs_04bld99",
+      "name": "cosmic-orbit-5yt12",
+      "displayName": "uv Fast Package Manager Engine",
+      "repo": "astral-sh/uv",
+      "branch": "main",
+      "state": "Shutdown",
+      "lastUsed": "1 week ago",
+      "createdAt": "2024-03-01T08:00:00Z",
+      "machine": {
+        "cores": 8,
+        "ramGb": 32,
+        "storageGb": 64,
+        "type": "Performance 8-core (32GB RAM)"
+      },
+      "location": "US East (N. Virginia)",
+      "collaboratorsCount": 0
+    }
+  ],
+  "templates": [
+    {
+      "id": "tmpl_react19",
+      "title": "React 19 + Server Components",
+      "description": "Pre-configured environment with Node 20, Vite, Tailwind CSS, and React 19 Canary runtime.",
+      "icon": "Code2",
+      "repo": "facebook/react",
+      "badge": "Official"
+    },
+    {
+      "id": "tmpl_next15",
+      "title": "Next.js 15 + shadcn/ui",
+      "description": "Fullstack workspace with Turbopack, Tailwind v4, and Radix UI components pre-installed.",
+      "icon": "Layout",
+      "repo": "shadcn/ui",
+      "badge": "Popular"
+    },
+    {
+      "id": "tmpl_rust_wasm",
+      "title": "Rust + WebAssembly Studio",
+      "description": "High-performance Rust toolchain with wasm-pack and interactive browser preview canvas.",
+      "icon": "Cpu",
+      "repo": "rustwasm/wasm-pack",
+      "badge": "Systems"
+    },
+    {
+      "id": "tmpl_python_uv",
+      "title": "Python + uv High-Velocity Stack",
+      "description": "Ultra-fast virtual environments with astral-sh/uv, PyTorch, and Jupyter kernel ready.",
+      "icon": "Terminal",
+      "repo": "astral-sh/uv",
+      "badge": "Data & ML"
+    }
+  ]
+}

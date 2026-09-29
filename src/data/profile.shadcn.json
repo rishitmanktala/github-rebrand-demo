@@ -1,0 +1,33 @@
+{
+  "name": "shadcn",
+  "login": "shadcn",
+  "bio": "I own a computer.",
+  "followers": "16.8k",
+  "following": "0",
+  "pinnedRepos": [
+    {
+      "repoName": "ui",
+      "desc": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+      "lang": "TypeScript",
+      "stars": "125k"
+    },
+    {
+      "repoName": "taxonomy",
+      "desc": "An open source application built using the new router, server components and everything new in Next.js 13.",
+      "lang": "TypeScript",
+      "stars": "19.3k"
+    },
+    {
+      "repoName": "improve",
+      "desc": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+      "lang": "",
+      "stars": "9.2k"
+    },
+    {
+      "repoName": "cn",
+      "desc": "cn is a new engine for Tailwind class merging and conflict resolution. It replaces tailwind-merge and clsx. Same APIs. Full parity. And it is 30× faster.",
+      "lang": "TypeScript",
+      "stars": "1.6k"
+    }
+  ]
+}

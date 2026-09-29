@@ -1,0 +1,174 @@
+{
+  "categories": [
+    "All Categories",
+    "AI & ML",
+    "Continuous Integration",
+    "Code Quality",
+    "Security",
+    "Deployment",
+    "Utilities"
+  ],
+  "featuredItem": {
+    "id": "ext_copilot_radar",
+    "slug": "copilot-radar",
+    "name": "GitHub Copilot Radar",
+    "type": "copilot-extension",
+    "publisher": {
+      "name": "GitHub Next",
+      "verified": true,
+      "avatarUrl": "https://github.com/github.png"
+    },
+    "shortDescription": "Continuous architectural analysis and plain-English PR diff summaries directly in your workflow.",
+    "fullDescription": "Copilot Radar monitors commits across monorepos, predicts breaking API changes, and drafts plain-English explanations for PR reviewers before code review begins.",
+    "icon": "Sparkles",
+    "badgeColor": "bg-ai-blue",
+    "category": "AI & ML",
+    "rating": 4.9,
+    "ratingCount": 2480,
+    "installs": "1.2M",
+    "pricing": "Free",
+    "featured": true,
+    "tags": ["AI", "Copilot", "Architecture", "PR Reviews"],
+    "installed": false
+  },
+  "items": [
+    {
+      "id": "ext_docker_action",
+      "slug": "docker-build-push",
+      "name": "Docker Build & Push",
+      "type": "action",
+      "publisher": {
+        "name": "Docker Inc.",
+        "verified": true,
+        "avatarUrl": "https://github.com/docker.png"
+      },
+      "shortDescription": "Build and push Docker container images with Buildx and multi-platform cache support.",
+      "fullDescription": "Official GitHub Action to build and push Docker images using Buildx with full BuildKit caching options.",
+      "icon": "Box",
+      "badgeColor": "bg-ship-green",
+      "category": "Deployment",
+      "rating": 4.8,
+      "ratingCount": 8920,
+      "installs": "5.6M",
+      "pricing": "Free",
+      "featured": false,
+      "tags": ["Docker", "CI/CD", "Containers"],
+      "installed": true
+    },
+    {
+      "id": "ext_codeql",
+      "slug": "codeql-security-scanner",
+      "name": "CodeQL Semantic Analysis",
+      "type": "action",
+      "publisher": {
+        "name": "GitHub Security Lab",
+        "verified": true,
+        "avatarUrl": "https://github.com/github.png"
+      },
+      "shortDescription": "Discover zero-day vulnerabilities and SQL injection attacks using semantic code queries.",
+      "fullDescription": "Industry-standard semantic AST code analysis engine finding vulnerabilities before code merges.",
+      "icon": "ShieldCheck",
+      "badgeColor": "bg-review-amber",
+      "category": "Security",
+      "rating": 4.9,
+      "ratingCount": 4210,
+      "installs": "3.8M",
+      "pricing": "Free",
+      "featured": false,
+      "tags": ["Security", "SAST", "Vulnerabilities"],
+      "installed": true
+    },
+    {
+      "id": "ext_prettier_check",
+      "slug": "prettier-format-bot",
+      "name": "Prettier Action Pro",
+      "type": "action",
+      "publisher": {
+        "name": "Prettier Team",
+        "verified": true,
+        "avatarUrl": "https://github.com/prettier.png"
+      },
+      "shortDescription": "Automatically check and apply opinionated code formatting on PR commits.",
+      "fullDescription": "Runs Prettier on pull requests and commits fixes automatically or comments on formatting errors.",
+      "icon": "CheckCircle2",
+      "badgeColor": "bg-highlight-yellow",
+      "category": "Code Quality",
+      "rating": 4.7,
+      "ratingCount": 1540,
+      "installs": "2.1M",
+      "pricing": "Free",
+      "featured": false,
+      "tags": ["Formatting", "Linting", "JavaScript"],
+      "installed": false
+    },
+    {
+      "id": "ext_sentry_release",
+      "slug": "sentry-release-tracking",
+      "name": "Sentry Release Health",
+      "type": "app",
+      "publisher": {
+        "name": "Sentry",
+        "verified": true,
+        "avatarUrl": "https://github.com/getsentry.png"
+      },
+      "shortDescription": "Track deployments, notify developers of regressions, and associate stack traces to commits.",
+      "fullDescription": "Real-time error tracking and crash reporting correlated with GitHub commits and pull requests.",
+      "icon": "AlertTriangle",
+      "badgeColor": "bg-diff-red",
+      "category": "Continuous Integration",
+      "rating": 4.8,
+      "ratingCount": 3120,
+      "installs": "1.9M",
+      "pricing": "Free Trial",
+      "featured": false,
+      "tags": ["Monitoring", "Sentry", "Telemetry"],
+      "installed": false
+    },
+    {
+      "id": "ext_tailwind_intellisense",
+      "slug": "tailwind-css-advisor",
+      "name": "Tailwind Design Inspector",
+      "type": "copilot-extension",
+      "publisher": {
+        "name": "Tailwind Labs",
+        "verified": true,
+        "avatarUrl": "https://github.com/tailwindlabs.png"
+      },
+      "shortDescription": "Audits PRs for design token alignment and generates accessible color contrast recommendations.",
+      "fullDescription": "Real-time CSS utility linter that flags arbitrary values and suggests token-compliant classes.",
+      "icon": "Palette",
+      "badgeColor": "bg-ai-blue",
+      "category": "Code Quality",
+      "rating": 4.9,
+      "ratingCount": 1940,
+      "installs": "890k",
+      "pricing": "Free",
+      "featured": false,
+      "tags": ["Design System", "Tailwind", "CSS"],
+      "installed": false
+    },
+    {
+      "id": "ext_prisma_migrate",
+      "slug": "prisma-schema-guard",
+      "name": "Prisma Schema Guard",
+      "type": "action",
+      "publisher": {
+        "name": "Prisma",
+        "verified": true,
+        "avatarUrl": "https://github.com/prisma.png"
+      },
+      "shortDescription": "Validates schema changes against production Postgres databases to detect data loss risks.",
+      "fullDescription": "Automates database migration testing in ephemeral environments on every pull request.",
+      "icon": "Database",
+      "badgeColor": "bg-ship-green",
+      "category": "Deployment",
+      "rating": 4.6,
+      "ratingCount": 850,
+      "installs": "430k",
+      "pricing": "Free",
+      "featured": false,
+      "tags": ["Database", "ORM", "Postgres"],
+      "installed": false
+    }
+  ]
+}

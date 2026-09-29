@@ -1,0 +1,181 @@
+{
+  "user": "shadcn",
+  "stats": {
+    "totalCount": 7,
+    "publicCount": 5,
+    "privateCount": 2,
+    "sourcesCount": 6,
+    "forksCount": 1
+  },
+  "repositories": [
+    {
+      "id": 101,
+      "name": "ui",
+      "fullName": "shadcn/ui",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+      "visibility": "public",
+      "isFork": false,
+      "stars": 125480,
+      "forks": 14210,
+      "openIssues": 42,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "updatedAt": "3 hours ago",
+      "license": "MIT",
+      "topics": ["react", "tailwind", "radix-ui", "components", "accessibility"],
+      "isTemplate": false,
+      "isStarred": true,
+      "healthScore": 98,
+      "activeBranch": "main"
+    },
+    {
+      "id": 102,
+      "name": "taxonomy",
+      "fullName": "shadcn/taxonomy",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "An open source application built using the new router, server components and everything new in Next.js.",
+      "visibility": "public",
+      "isFork": false,
+      "stars": 18240,
+      "forks": 2890,
+      "openIssues": 16,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "updatedAt": "1 day ago",
+      "license": "MIT",
+      "topics": ["nextjs", "server-components", "app-router", "tailwind", "auth"],
+      "isTemplate": false,
+      "isStarred": true,
+      "healthScore": 94,
+      "activeBranch": "main"
+    },
+    {
+      "id": 103,
+      "name": "next-template",
+      "fullName": "shadcn/next-template",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "A Next.js 14 template for building apps with Radix UI, Lucide Icons, and Tailwind CSS.",
+      "visibility": "public",
+      "isFork": false,
+      "stars": 6420,
+      "forks": 910,
+      "openIssues": 5,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "updatedAt": "4 days ago",
+      "license": "MIT",
+      "topics": ["nextjs", "template", "tailwind", "radix-ui"],
+      "isTemplate": true,
+      "isStarred": false,
+      "healthScore": 92,
+      "activeBranch": "main"
+    },
+    {
+      "id": 104,
+      "name": "studio-private-preview",
+      "fullName": "shadcn/studio-private-preview",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "Internal prototype exploration for tactile developer tooling, dual-lens rendering, and collaborative paired reviews.",
+      "visibility": "private",
+      "isFork": false,
+      "stars": 12,
+      "forks": 1,
+      "openIssues": 2,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "updatedAt": "Yesterday",
+      "license": "Proprietary",
+      "topics": ["studio", "internal", "experiments", "rebrand"],
+      "isTemplate": false,
+      "isStarred": true,
+      "healthScore": 90,
+      "activeBranch": "main"
+    },
+    {
+      "id": 105,
+      "name": "react",
+      "fullName": "shadcn/react",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "Fork of facebook/react for canary experimentation with server actions and custom flight wire protocol parsers.",
+      "visibility": "public",
+      "isFork": true,
+      "forkedFrom": "facebook/react",
+      "stars": 412,
+      "forks": 84,
+      "openIssues": 8,
+      "language": "JavaScript",
+      "languageColor": "#f1e05a",
+      "updatedAt": "5 days ago",
+      "license": "MIT",
+      "topics": ["react", "upstream-fork", "canary"],
+      "isTemplate": false,
+      "isStarred": false,
+      "healthScore": 88,
+      "activeBranch": "feat/neo-brutalist"
+    },
+    {
+      "id": 106,
+      "name": "design-system-tokens",
+      "fullName": "shadcn/design-system-tokens",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "Design tokens, color scales, and typography definitions bridging Figma variables with Tailwind v4 utilities.",
+      "visibility": "public",
+      "isFork": false,
+      "stars": 3850,
+      "forks": 340,
+      "openIssues": 4,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "updatedAt": "1 week ago",
+      "license": "Apache-2.0",
+      "topics": ["tokens", "neo-brutalism", "figma", "tailwind"],
+      "isTemplate": false,
+      "isStarred": false,
+      "healthScore": 96,
+      "activeBranch": "main"
+    },
+    {
+      "id": 107,
+      "name": "cyfernode-agent-bridge",
+      "fullName": "shadcn/cyfernode-agent-bridge",
+      "owner": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "description": "High-speed WebAssembly bridge for bidirectional agent telemetry and zero-latency WebSocket streaming.",
+      "visibility": "private",
+      "isFork": false,
+      "stars": 48,
+      "forks": 3,
+      "openIssues": 1,
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "updatedAt": "2 weeks ago",
+      "license": "MIT",
+      "topics": ["rust", "wasm", "telemetry", "streaming"],
+      "isTemplate": false,
+      "isStarred": false,
+      "healthScore": 95,
+      "activeBranch": "main"
+    }
+  ]
+}

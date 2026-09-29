@@ -1,0 +1,84 @@
+{
+  "repo": "facebook/react",
+  "categories": [
+    { "id": "cat_ann", "name": "Announcements", "icon": "Megaphone", "description": "Official updates from maintainers", "count": 28 },
+    { "id": "cat_ideas", "name": "Ideas", "icon": "Lightbulb", "description": "Feature suggestions and architectural brainstorming", "count": 142 },
+    { "id": "cat_qa", "name": "Q&A", "icon": "HelpCircle", "description": "Ask the community and get verified answers", "count": 389 },
+    { "id": "cat_show", "name": "Show and tell", "icon": "Sparkles", "description": "Share what you built with the community", "count": 215 },
+    { "id": "cat_gen", "name": "General", "icon": "MessageSquare", "description": "Anything relevant to the ecosystem", "count": 180 }
+  ],
+  "discussions": [
+    {
+      "id": 1402,
+      "title": "React 19 Readiness: How should libraries prepare for the Action hooks?",
+      "category": "Announcements",
+      "categoryColor": "bg-ship-green text-white",
+      "author": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png",
+        "badge": "Maintainer"
+      },
+      "createdAt": "3 days ago",
+      "upvotes": 342,
+      "isUpvoted": true,
+      "answersCount": 54,
+      "isAnswered": true,
+      "previewText": "We are preparing to cut the first release candidate for React 19. Here is a guide on adapting form libraries and query caches for useActionState and useOptimistic.",
+      "pinned": true
+    },
+    {
+      "id": 1398,
+      "title": "Idea: First-class Support for Signal primitives alongside React State",
+      "category": "Ideas",
+      "categoryColor": "bg-highlight-yellow text-ink",
+      "author": {
+        "login": "gaearon",
+        "avatarUrl": "https://github.com/gaearon.png",
+        "badge": "Core Alum"
+      },
+      "createdAt": "5 days ago",
+      "upvotes": 218,
+      "isUpvoted": false,
+      "answersCount": 89,
+      "isAnswered": false,
+      "previewText": "Can fine-grained reactivity coordinate with React's scheduling model without sacrificing time-slicing and interruption? Let's discuss trade-offs.",
+      "pinned": false
+    },
+    {
+      "id": 1375,
+      "title": "Why does Server Component rendering throw on client-only window access instead of warning?",
+      "category": "Q&A",
+      "categoryColor": "bg-ai-blue text-white",
+      "author": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png",
+        "badge": "Top Builder"
+      },
+      "createdAt": "1 week ago",
+      "upvotes": 124,
+      "isUpvoted": false,
+      "answersCount": 12,
+      "isAnswered": true,
+      "previewText": "When components inadvertently evaluate window or localStorage in the RSC module scope, the server process exits immediately. Here is the canonical isolation pattern.",
+      "pinned": false
+    },
+    {
+      "id": 1350,
+      "title": "Show & Tell: Building a terminal emulator directly inside React 19 Canvas",
+      "category": "Show and tell",
+      "categoryColor": "bg-review-amber text-ink",
+      "author": {
+        "login": "leerob",
+        "avatarUrl": "https://github.com/leerob.png",
+        "badge": "Contributor"
+      },
+      "createdAt": "2 weeks ago",
+      "upvotes": 178,
+      "isUpvoted": true,
+      "answersCount": 27,
+      "isAnswered": true,
+      "previewText": "Demonstrating how React Server Components combined with WebSockets can stream interactive shell sessions with zero client bundle overhead.",
+      "pinned": false
+    }
+  ]
+}

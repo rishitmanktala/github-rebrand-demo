@@ -1,0 +1,31 @@
+{
+  "owner": "facebook",
+  "name": "react",
+  "about": "The library for web and native user interfaces.",
+  "stars": "211k",
+  "forks": "44k",
+  "files": [
+    {
+      "name": "packages",
+      "message": "Update React version",
+      "time": "2023-11-20T10:00:00Z"
+    },
+    {
+      "name": "scripts",
+      "message": "Fix build script",
+      "time": "2023-11-19T10:00:00Z"
+    },
+    {
+      "name": "package.json",
+      "message": "Bump dependencies",
+      "time": "2023-11-18T10:00:00Z"
+    },
+    {
+      "name": "README.md",
+      "message": "Update docs",
+      "time": "2023-11-17T10:00:00Z"
+    }
+  ],
+  "readme": "...",
+  "languages": []
+}

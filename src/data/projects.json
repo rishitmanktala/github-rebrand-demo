@@ -1,0 +1,165 @@
+{
+  "owner": "facebook",
+  "totalProjects": 4,
+  "projects": [
+    {
+      "id": "proj_react19",
+      "number": 1,
+      "title": "React 19 Release Flight Deck",
+      "description": "Tracking all breaking changes, compiler stabilization, and documentation rollouts for the React 19 milestone.",
+      "state": "open",
+      "updatedAt": "Yesterday",
+      "progress": {
+        "todo": 4,
+        "inProgress": 3,
+        "inReview": 2,
+        "done": 18,
+        "percentComplete": 72
+      },
+      "columns": [
+        {
+          "id": "col_todo",
+          "name": "Todo",
+          "count": 4,
+          "color": "border-gray-500",
+          "cards": [
+            {
+              "id": "card_01",
+              "title": "Document useActionState migration patterns",
+              "type": "issue",
+              "identifier": "#29810",
+              "assignee": { "login": "acdlite", "avatarUrl": "https://github.com/acdlite.png" },
+              "labels": [{ "name": "Docs", "color": "#58A6FF" }],
+              "estimate": "2d",
+              "deadline": "Apr 15, 2024"
+            },
+            {
+              "id": "card_02",
+              "title": "Deprecate UMD script builds in react-dom",
+              "type": "issue",
+              "identifier": "#29712",
+              "assignee": { "login": "sebmarkbage", "avatarUrl": "https://github.com/sebmarkbage.png" },
+              "labels": [{ "name": "Breaking", "color": "#F85149" }],
+              "estimate": "1d",
+              "deadline": "Apr 10, 2024"
+            },
+            {
+              "id": "card_03",
+              "title": "Evaluate View Transition integration in Suspense boundaries",
+              "type": "issue",
+              "identifier": "#29785",
+              "assignee": { "login": "gaearon", "avatarUrl": "https://github.com/gaearon.png" },
+              "labels": [{ "name": "RFC", "color": "#FFF9A3" }],
+              "estimate": "4d",
+              "deadline": "Apr 22, 2024"
+            },
+            {
+              "id": "card_04",
+              "title": "Automated regression suite for async action rejections",
+              "type": "issue",
+              "identifier": "#29822",
+              "assignee": { "login": "gnoff", "avatarUrl": "https://github.com/gnoff.png" },
+              "labels": [{ "name": "Tests", "color": "#A371F7" }],
+              "estimate": "2d",
+              "deadline": "Apr 18, 2024"
+            }
+          ]
+        },
+        {
+          "id": "col_in_progress",
+          "name": "In Progress",
+          "count": 3,
+          "color": "border-review-amber",
+          "cards": [
+            {
+              "id": "card_05",
+              "title": "Compiler: Memoization bail-out in loops with nested destructuring",
+              "type": "issue",
+              "identifier": "#29650",
+              "assignee": { "login": "josephsavona", "avatarUrl": "https://github.com/josephsavona.png" },
+              "labels": [{ "name": "Compiler", "color": "#A371F7" }],
+              "estimate": "3d",
+              "deadline": "Apr 08, 2024"
+            },
+            {
+              "id": "card_06",
+              "title": "Support AsyncLocalStorage in Node.js server runtime",
+              "type": "pr",
+              "identifier": "#29512",
+              "assignee": { "login": "gnoff", "avatarUrl": "https://github.com/gnoff.png" },
+              "labels": [{ "name": "RSC", "color": "#58A6FF" }],
+              "estimate": "5d",
+              "deadline": "Apr 12, 2024"
+            },
+            {
+              "id": "card_07",
+              "title": "Neo-brutalist theme token synchronization in Studio header",
+              "type": "issue",
+              "identifier": "#4820",
+              "assignee": { "login": "shadcn", "avatarUrl": "https://github.com/shadcn.png" },
+              "labels": [{ "name": "UI", "color": "#2EA043" }],
+              "estimate": "1d",
+              "deadline": "Apr 05, 2024"
+            }
+          ]
+        },
+        {
+          "id": "col_in_review",
+          "name": "In Review",
+          "count": 2,
+          "color": "border-ai-blue",
+          "cards": [
+            {
+              "id": "card_08",
+              "title": "Move all client code to react-dom/client",
+              "type": "pr",
+              "identifier": "#28271",
+              "assignee": { "login": "gnoff", "avatarUrl": "https://github.com/gnoff.png" },
+              "labels": [{ "name": "Refactor", "color": "#2EA043" }],
+              "estimate": "3d",
+              "deadline": "Apr 03, 2024"
+            },
+            {
+              "id": "card_09",
+              "title": "Fix memory leak in useSyncExternalStore with rapidly updating subscriptions",
+              "type": "pr",
+              "identifier": "#29401",
+              "assignee": { "login": "acdlite", "avatarUrl": "https://github.com/acdlite.png" },
+              "labels": [{ "name": "Bugfix", "color": "#F85149" }],
+              "estimate": "1d",
+              "deadline": "Apr 04, 2024"
+            }
+          ]
+        },
+        {
+          "id": "col_done",
+          "name": "Done",
+          "count": 18,
+          "color": "border-ship-green",
+          "cards": [
+            {
+              "id": "card_10",
+              "title": "React Compiler Beta Announcement and Docs",
+              "type": "note",
+              "identifier": "NOTE-1",
+              "assignee": { "login": "josephsavona", "avatarUrl": "https://github.com/josephsavona.png" },
+              "labels": [{ "name": "Shipped", "color": "#A371F7" }],
+              "estimate": "2d",
+              "deadline": "Mar 28, 2024"
+            },
+            {
+              "id": "card_11",
+              "title": "Server Actions specification stabilization",
+              "type": "pr",
+              "identifier": "#27890",
+              "assignee": { "login": "sebmarkbage", "avatarUrl": "https://github.com/sebmarkbage.png" },
+              "labels": [{ "name": "Core", "color": "#2EA043" }],
+              "estimate": "4d",
+              "deadline": "Mar 25, 2024"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

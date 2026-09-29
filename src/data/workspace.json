@@ -1,0 +1,111 @@
+{
+  "workspaceName": "React & Ecosystem Workshop",
+  "tagline": "Unified collaborative canvas for core maintainers and partners.",
+  "activeSessions": [
+    {
+      "id": "sess_01",
+      "title": "PR #28271 Final Review: react-dom/client split",
+      "type": "rfc-review",
+      "activeParticipants": [
+        { "login": "gnoff", "name": "Lauren Tan", "avatarUrl": "https://github.com/gnoff.png", "status": "speaking" },
+        { "login": "sebmarkbage", "name": "Sebastian Markbåge", "avatarUrl": "https://github.com/sebmarkbage.png", "status": "active" }
+      ],
+      "targetRepo": "facebook/react",
+      "prOrIssueId": 28271,
+      "startedAt": "24 minutes ago"
+    },
+    {
+      "id": "sess_02",
+      "title": "shadcn/ui Neo-Brutalist Theme Architecture",
+      "type": "pairing",
+      "activeParticipants": [
+        { "login": "shadcn", "name": "Shad", "avatarUrl": "https://github.com/shadcn.png", "status": "speaking" },
+        { "login": "leerob", "name": "Lee Robinson", "avatarUrl": "https://github.com/leerob.png", "status": "active" }
+      ],
+      "targetRepo": "shadcn/ui",
+      "startedAt": "1 hour ago"
+    },
+    {
+      "id": "sess_03",
+      "title": "Incident Triage: Edge runtime streaming backpressure",
+      "type": "incident-triage",
+      "activeParticipants": [
+        { "login": "acdlite", "name": "Andrew Clark", "avatarUrl": "https://github.com/acdlite.png", "status": "active" }
+      ],
+      "targetRepo": "facebook/react",
+      "prOrIssueId": 29810,
+      "startedAt": "2 hours ago"
+    }
+  ],
+  "pinnedProjects": [
+    {
+      "name": "facebook/react",
+      "description": "Core React library repository and canary release line.",
+      "branch": "main",
+      "health": "healthy",
+      "openPrs": 245,
+      "pendingReviews": 8
+    },
+    {
+      "name": "shadcn/ui",
+      "description": "Component architecture and CLI codegen distribution.",
+      "branch": "main",
+      "health": "healthy",
+      "openPrs": 42,
+      "pendingReviews": 3
+    },
+    {
+      "name": "astral-sh/uv",
+      "description": "Next-generation fast Python package resolver and installer.",
+      "branch": "main",
+      "health": "healthy",
+      "openPrs": 18,
+      "pendingReviews": 2
+    }
+  ],
+  "activityFeed": [
+    {
+      "id": "act_01",
+      "type": "pr_merge",
+      "actor": { "login": "gnoff", "avatarUrl": "https://github.com/gnoff.png" },
+      "target": "facebook/react #28271",
+      "message": "Merged pull request: Move all client code to react-dom/client",
+      "timestamp": "2 hours ago",
+      "badgeColor": "bg-ship-green text-white"
+    },
+    {
+      "id": "act_02",
+      "type": "deployment",
+      "actor": { "login": "facebook-bot", "avatarUrl": "https://github.com/github.png" },
+      "target": "react-canary-v19.0.0-alpha",
+      "message": "Automated canary release published to npm registry",
+      "timestamp": "3 hours ago",
+      "badgeColor": "bg-ai-blue text-white"
+    },
+    {
+      "id": "act_03",
+      "type": "rfc_created",
+      "actor": { "login": "gaearon", "avatarUrl": "https://github.com/gaearon.png" },
+      "target": "facebook/react #29785",
+      "message": "Opened new RFC for View Transition primitives in concurrent mode",
+      "timestamp": "1 day ago",
+      "badgeColor": "bg-highlight-yellow text-ink"
+    },
+    {
+      "id": "act_04",
+      "type": "security_alert",
+      "actor": { "login": "codeql-bot", "avatarUrl": "https://github.com/github.png" },
+      "target": "shadcn/ui",
+      "message": "CodeQL scan passed with 0 vulnerabilities detected",
+      "timestamp": "1 day ago",
+      "badgeColor": "bg-ship-green text-white"
+    }
+  ],
+  "teamMembers": [
+    { "login": "sebmarkbage", "name": "Sebastian Markbåge", "role": "Architect", "avatarUrl": "https://github.com/sebmarkbage.png", "isOnline": true },
+    { "login": "gnoff", "name": "Lauren Tan", "role": "Maintainer", "avatarUrl": "https://github.com/gnoff.png", "isOnline": true },
+    { "login": "acdlite", "name": "Andrew Clark", "role": "Compiler Lead", "avatarUrl": "https://github.com/acdlite.png", "isOnline": true },
+    { "login": "shadcn", "name": "Shad", "role": "Collaborator", "avatarUrl": "https://github.com/shadcn.png", "isOnline": false },
+    { "login": "leerob", "name": "Lee Robinson", "role": "Developer Relations", "avatarUrl": "https://github.com/leerob.png", "isOnline": true }
+  ]
+}

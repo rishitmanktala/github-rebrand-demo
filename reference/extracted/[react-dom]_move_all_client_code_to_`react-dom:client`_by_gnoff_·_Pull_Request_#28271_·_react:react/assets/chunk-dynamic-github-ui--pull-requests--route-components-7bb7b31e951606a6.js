@@ -1,0 +1,2 @@
+performance.mark("js-parse-end:chunk-dynamic-github-ui--pull-requests--route-components-7bb7b31e951606a6.js");
+import*as s from"scheduler";export const __rspack_esm_id="xsh";export const __rspack_esm_ids=["xsh"];export const __webpack_modules__={Cg3(_){_.exports=s}};

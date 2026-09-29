@@ -1,0 +1,20 @@
+{
+  "id": 28271,
+  "title": "[react-dom] move all client code to `react-dom/client`",
+  "author": "gnoff",
+  "state": "Open",
+  "description": "This PR moves the client code out of react-dom into react-dom/client.",
+  "events": [
+    {
+      "type": "comment",
+      "author": "gnoff",
+      "body": "This PR moves the client code."
+    },
+    {
+      "type": "event",
+      "text": "sebmarkbage requested a review"
+    }
+  ],
+  "reviewers": [],
+  "labels": []
+}

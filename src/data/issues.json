@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "openCount": 842,
+    "closedCount": 12450,
+    "triageNeeded": 14,
+    "aiAssisted": 128
+  },
+  "issues": [
+    {
+      "id": 29810,
+      "number": 29810,
+      "title": "useActionState hook causes hydration mismatch when server action throws",
+      "repo": "facebook/react",
+      "author": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-24T14:22:00Z",
+      "updatedAt": "2024-03-25T09:15:00Z",
+      "commentsCount": 18,
+      "labels": [
+        { "id": "l1", "name": "Status: Unconfirmed", "color": "#d4c5f9", "description": "Needs reproduction" },
+        { "id": "l2", "name": "Component: Server Actions", "color": "#58A6FF", "description": "Server action runtime" },
+        { "id": "l3", "name": "Priority: Blocker", "color": "#F85149", "description": "High priority issue" }
+      ],
+      "assignee": {
+        "login": "sebmarkbage",
+        "avatarUrl": "https://github.com/sebmarkbage.png"
+      },
+      "aiSummary": "Server action failure during SSR fails to serialize rejection payload to client stream, causing mismatch at client boundary.",
+      "category": "bug",
+      "reactionsCount": 42,
+      "body": "When a server action throws an error during initial render, the client reconciliation logic fails to catch the boundary and throws a hydration mismatch error instead of unwrapping the error boundary."
+    },
+    {
+      "id": 29785,
+      "number": 29785,
+      "title": "RFC: Standardized View Transition Primitives for Concurrent Transitions",
+      "repo": "facebook/react",
+      "author": {
+        "login": "gaearon",
+        "avatarUrl": "https://github.com/gaearon.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-22T10:11:00Z",
+      "updatedAt": "2024-03-24T16:00:00Z",
+      "commentsCount": 47,
+      "labels": [
+        { "id": "l4", "name": "Type: Discussion", "color": "#FFF9A3", "description": "Proposal / RFC" },
+        { "id": "l5", "name": "React 19", "color": "#2EA043", "description": "Scheduled for React 19" }
+      ],
+      "aiSummary": "Proposal to introduce `<ViewTransition>` component to synchronize CSS View Transitions API with React Suspense and Transitions.",
+      "category": "rfc",
+      "reactionsCount": 115,
+      "body": "This proposal defines how the Document View Transitions API coordinates with React's concurrent scheduler."
+    },
+    {
+      "id": 29650,
+      "number": 29650,
+      "title": "Compiler: Memoization bail-out in loops with nested destructuring",
+      "repo": "facebook/react",
+      "author": {
+        "login": "josephsavona",
+        "avatarUrl": "https://github.com/josephsavona.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-20T18:45:00Z",
+      "updatedAt": "2024-03-23T11:20:00Z",
+      "commentsCount": 7,
+      "labels": [
+        { "id": "l6", "name": "React Compiler", "color": "#A371F7", "description": "Compiler analysis" }
+      ],
+      "assignee": {
+        "login": "josephsavona",
+        "avatarUrl": "https://github.com/josephsavona.png"
+      },
+      "aiSummary": "Optimisation pass fails to infer immutable bindings when array destructuring is used inside a mapped loop.",
+      "category": "perf",
+      "reactionsCount": 29,
+      "body": "The React Compiler aborts memoization when detecting complex destructuring inside iterator expressions."
+    },
+    {
+      "id": 29512,
+      "number": 29512,
+      "title": "Support AsyncLocalStorage in Node.js server component runtime",
+      "repo": "facebook/react",
+      "author": {
+        "login": "gnoff",
+        "avatarUrl": "https://github.com/gnoff.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-18T09:30:00Z",
+      "updatedAt": "2024-03-21T14:10:00Z",
+      "commentsCount": 24,
+      "labels": [
+        { "id": "l7", "name": "Component: Flight", "color": "#58A6FF", "description": "React Server Components runtime" },
+        { "id": "l8", "name": "Type: Feature", "color": "#2EA043", "description": "New capability" }
+      ],
+      "assignee": {
+        "login": "gnoff",
+        "avatarUrl": "https://github.com/gnoff.png"
+      },
+      "aiSummary": "Propagate AsyncLocalStorage context across React Server Component async dispatch boundaries automatically.",
+      "category": "feature",
+      "reactionsCount": 63,
+      "body": "Context variables stored inside AsyncLocalStorage should be preserved when async React Server Components yield control to asynchronous microtasks."
+    },
+    {
+      "id": 29401,
+      "number": 29401,
+      "title": "Fix memory leak in useSyncExternalStore with rapidly updating subscriptions",
+      "repo": "facebook/react",
+      "author": {
+        "login": "bvaughn",
+        "avatarUrl": "https://github.com/bvaughn.png"
+      },
+      "state": "closed",
+      "createdAt": "2024-03-12T11:00:00Z",
+      "updatedAt": "2024-03-16T17:40:00Z",
+      "commentsCount": 15,
+      "labels": [
+        { "id": "l9", "name": "Status: Fixed", "color": "#2EA043", "description": "Resolved by commit" },
+        { "id": "l10", "name": "Component: Hooks", "color": "#D29922", "description": "Hooks core" }
+      ],
+      "assignee": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png"
+      },
+      "aiSummary": "Unsubscribe callback was not cleaned up during unmount if pending transition interrupted component tree unmounting.",
+      "category": "bug",
+      "reactionsCount": 38,
+      "body": "Resolved by ensuring subscriber cleanup handlers execute unconditionally during concurrent fiber destruction."
+    },
+    {
+      "id": 4820,
+      "number": 4820,
+      "title": "Dialog: focus trap breaks on Safari with virtual keyboard",
+      "repo": "shadcn/ui",
+      "author": {
+        "login": "leerob",
+        "avatarUrl": "https://github.com/leerob.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-23T16:15:00Z",
+      "updatedAt": "2024-03-24T12:00:00Z",
+      "commentsCount": 11,
+      "labels": [
+        { "id": "l11", "name": "bug", "color": "#F85149", "description": "Something isn't working" },
+        { "id": "l12", "name": "dialog", "color": "#58A6FF", "description": "Dialog component" }
+      ],
+      "assignee": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "aiSummary": "Mobile Safari viewport resizing during virtual keyboard display pushes focus container off-screen without re-centering.",
+      "category": "bug",
+      "reactionsCount": 19,
+      "body": "On iOS Safari 17.4, triggering an input inside a Dialog with autofocus moves the active element outside the visible viewport."
+    }
+  ]
+}

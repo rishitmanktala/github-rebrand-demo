@@ -1,0 +1,106 @@
+{
+  "trendingTimeframes": ["today", "this_week", "this_month"],
+  "languages": ["All Languages", "TypeScript", "JavaScript", "Rust", "Python", "Go"],
+  "spotlightStory": {
+    "headline": "How the React Core Team Separated Server from Client",
+    "subline": "An inside look into PR #28271 and the architectural rethinking of modern web runtimes.",
+    "author": "gnoff & sebmarkbage",
+    "repo": "facebook/react",
+    "readTime": "5 min read"
+  },
+  "trending": [
+    {
+      "owner": "shadcn",
+      "name": "ui",
+      "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize.",
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "stars": "125k",
+      "forks": "14.2k",
+      "starsToday": 892,
+      "builtBy": [
+        { "login": "shadcn", "avatarUrl": "https://github.com/shadcn.png" },
+        { "login": "leerob", "avatarUrl": "https://github.com/leerob.png" }
+      ],
+      "topicTags": ["react", "tailwind", "radix-ui", "components"],
+      "momentumScore": 99,
+      "velocityText": "+4,210 stars this week"
+    },
+    {
+      "owner": "facebook",
+      "name": "react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a",
+      "stars": "211k",
+      "forks": "44k",
+      "starsToday": 415,
+      "builtBy": [
+        { "login": "acdlite", "avatarUrl": "https://github.com/acdlite.png" },
+        { "login": "sebmarkbage", "avatarUrl": "https://github.com/sebmarkbage.png" },
+        { "login": "gaearon", "avatarUrl": "https://github.com/gaearon.png" }
+      ],
+      "topicTags": ["javascript", "library", "ui", "declarative"],
+      "momentumScore": 95,
+      "velocityText": "+2,840 stars this week"
+    },
+    {
+      "owner": "astral-sh",
+      "name": "uv",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "stars": "38k",
+      "forks": "1.4k",
+      "starsToday": 630,
+      "builtBy": [
+        { "login": "charliermarsh", "avatarUrl": "https://github.com/charliermarsh.png" }
+      ],
+      "topicTags": ["python", "rust", "package-manager", "cli"],
+      "momentumScore": 92,
+      "velocityText": "+3,150 stars this week"
+    },
+    {
+      "owner": "tailwindlabs",
+      "name": "tailwindcss",
+      "description": "A utility-first CSS framework for rapid UI development.",
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "stars": "84k",
+      "forks": "4.1k",
+      "starsToday": 320,
+      "builtBy": [
+        { "login": "adamwathan", "avatarUrl": "https://github.com/adamwathan.png" }
+      ],
+      "topicTags": ["css", "framework", "oxide", "compiler"],
+      "momentumScore": 88,
+      "velocityText": "+1,980 stars this week"
+    }
+  ],
+  "collections": [
+    {
+      "id": "col_ai_toolkits",
+      "title": "Local-First AI Toolkits",
+      "description": "Libraries for running LLMs, embedding models, and vector stores directly in client browsers and edge runtimes.",
+      "curator": "github-editorial",
+      "itemCount": 16,
+      "color": "border-ai-blue"
+    },
+    {
+      "id": "col_design_systems",
+      "title": "Modern Design Systems 2024",
+      "description": "Next-generation design systems marrying neo-brutalism, fluid typography, and accessibility.",
+      "curator": "design-guild",
+      "itemCount": 24,
+      "color": "border-highlight-yellow"
+    },
+    {
+      "id": "col_systems_tooling",
+      "title": "Next-Gen Systems & CLI Tooling",
+      "description": "Ultra-fast CLI tools built in Rust and Zig reimagining developer ergonomics and build speeds.",
+      "curator": "systems-core",
+      "itemCount": 19,
+      "color": "border-ship-green"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "stats": {
+    "openCount": 318,
+    "closedCount": 18240,
+    "needsReview": 12,
+    "ciPassing": 294
+  },
+  "pulls": [
+    {
+      "id": 28271,
+      "number": 28271,
+      "title": "Move all client code to react-dom/client",
+      "repo": "facebook/react",
+      "author": {
+        "login": "gnoff",
+        "avatarUrl": "https://github.com/gnoff.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-24T18:30:00Z",
+      "updatedAt": "2024-03-25T11:45:00Z",
+      "branch": {
+        "head": "gnoff/split-client",
+        "base": "main"
+      },
+      "reviewStatus": "approved",
+      "ciStatus": "success",
+      "ciChecks": {
+        "passed": 42,
+        "total": 42
+      },
+      "commentsCount": 38,
+      "changedFiles": 8,
+      "additions": 412,
+      "deletions": 186,
+      "labels": [
+        { "id": "l_dom", "name": "react-dom", "color": "#2EA043" },
+        { "id": "l_refactor", "name": "Architecture", "color": "#58A6FF" },
+        { "id": "l_approved", "name": "Ready to Ship", "color": "#A371F7" }
+      ],
+      "assignee": {
+        "login": "sebmarkbage",
+        "avatarUrl": "https://github.com/sebmarkbage.png"
+      },
+      "reviewers": [
+        { "login": "sebmarkbage", "avatarUrl": "https://github.com/sebmarkbage.png", "status": "approved" },
+        { "login": "acdlite", "avatarUrl": "https://github.com/acdlite.png", "status": "approved" }
+      ],
+      "aiSummary": "Splits the monolithic ReactDOM client runtime into discrete entry points for client hydrators and server streaming boundaries."
+    },
+    {
+      "id": 29512,
+      "number": 29512,
+      "title": "Support AsyncLocalStorage in Node.js server component runtime",
+      "repo": "facebook/react",
+      "author": {
+        "login": "gnoff",
+        "avatarUrl": "https://github.com/gnoff.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-22T14:15:00Z",
+      "updatedAt": "2024-03-24T16:20:00Z",
+      "branch": {
+        "head": "gnoff/als-flight-context",
+        "base": "main"
+      },
+      "reviewStatus": "review_required",
+      "ciStatus": "success",
+      "ciChecks": {
+        "passed": 38,
+        "total": 38
+      },
+      "commentsCount": 14,
+      "changedFiles": 5,
+      "additions": 234,
+      "deletions": 48,
+      "labels": [
+        { "id": "l_flight", "name": "Flight / RSC", "color": "#58A6FF" },
+        { "id": "l_runtime", "name": "Node.js", "color": "#D29922" }
+      ],
+      "assignee": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png"
+      },
+      "reviewers": [
+        { "login": "acdlite", "avatarUrl": "https://github.com/acdlite.png", "status": "pending" }
+      ],
+      "aiSummary": "Propagates Node.js AsyncLocalStorage store reference across Flight microtask async transitions."
+    },
+    {
+      "id": 29401,
+      "number": 29401,
+      "title": "Fix memory leak in useSyncExternalStore with rapidly updating subscriptions",
+      "repo": "facebook/react",
+      "author": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png"
+      },
+      "state": "closed",
+      "createdAt": "2024-03-12T10:00:00Z",
+      "updatedAt": "2024-03-16T17:40:00Z",
+      "branch": {
+        "head": "acdlite/fix-usesync-leak",
+        "base": "main"
+      },
+      "reviewStatus": "approved",
+      "ciStatus": "success",
+      "ciChecks": {
+        "passed": 42,
+        "total": 42
+      },
+      "commentsCount": 15,
+      "changedFiles": 3,
+      "additions": 67,
+      "deletions": 12,
+      "labels": [
+        { "id": "l_fixed", "name": "Status: Fixed", "color": "#2EA043" },
+        { "id": "l_hooks", "name": "Component: Hooks", "color": "#D29922" }
+      ],
+      "assignee": {
+        "login": "acdlite",
+        "avatarUrl": "https://github.com/acdlite.png"
+      },
+      "reviewers": [
+        { "login": "sebmarkbage", "avatarUrl": "https://github.com/sebmarkbage.png", "status": "approved" }
+      ],
+      "aiSummary": "Guarantees unsubscription callbacks run unconditionally during concurrent tree tear-downs."
+    },
+    {
+      "id": 4821,
+      "number": 4821,
+      "title": "Add Neo-Brutalist Theme Variant to CLI and Component Registry",
+      "repo": "shadcn/ui",
+      "author": {
+        "login": "shadcn",
+        "avatarUrl": "https://github.com/shadcn.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-24T09:00:00Z",
+      "updatedAt": "2024-03-25T08:30:00Z",
+      "branch": {
+        "head": "feat/neo-brutalist",
+        "base": "main"
+      },
+      "reviewStatus": "review_required",
+      "ciStatus": "success",
+      "ciChecks": {
+        "passed": 16,
+        "total": 16
+      },
+      "commentsCount": 22,
+      "changedFiles": 14,
+      "additions": 580,
+      "deletions": 42,
+      "labels": [
+        { "id": "l_theme", "name": "Themes", "color": "#FFF9A3" },
+        { "id": "l_cli", "name": "CLI", "color": "#A371F7" }
+      ],
+      "assignee": {
+        "login": "leerob",
+        "avatarUrl": "https://github.com/leerob.png"
+      },
+      "reviewers": [
+        { "login": "leerob", "avatarUrl": "https://github.com/leerob.png", "status": "pending" }
+      ],
+      "aiSummary": "Introduces high-contrast ink borders, tactile paper colors, and hard offset drop shadows as a selectable style preset."
+    },
+    {
+      "id": 1820,
+      "number": 1820,
+      "title": "Optimize dependency graph topological sort using bitmasks in Rust",
+      "repo": "astral-sh/uv",
+      "author": {
+        "login": "charliermarsh",
+        "avatarUrl": "https://github.com/charliermarsh.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-23T11:00:00Z",
+      "updatedAt": "2024-03-24T19:15:00Z",
+      "branch": {
+        "head": "charlie/bitmask-graph",
+        "base": "main"
+      },
+      "reviewStatus": "approved",
+      "ciStatus": "success",
+      "ciChecks": {
+        "passed": 24,
+        "total": 24
+      },
+      "commentsCount": 9,
+      "changedFiles": 4,
+      "additions": 188,
+      "deletions": 74,
+      "labels": [
+        { "id": "l_perf", "name": "Performance", "color": "#F85149" },
+        { "id": "l_rust", "name": "Rust Engine", "color": "#dea584" }
+      ],
+      "assignee": {
+        "login": "charliermarsh",
+        "avatarUrl": "https://github.com/charliermarsh.png"
+      },
+      "reviewers": [
+        { "login": "konstin", "avatarUrl": "https://github.com/github.png", "status": "approved" }
+      ],
+      "aiSummary": "Replaces hash-set based cycle detection in dependency resolution with SIMD-accelerated 64-bit bitmasks, yielding a 3.2x speedup."
+    },
+    {
+      "id": 3910,
+      "number": 3910,
+      "title": "Oxide compiler: zero-copy CSS tokenization pipeline",
+      "repo": "tailwindlabs/tailwindcss",
+      "author": {
+        "login": "adamwathan",
+        "avatarUrl": "https://github.com/adamwathan.png"
+      },
+      "state": "open",
+      "createdAt": "2024-03-21T15:40:00Z",
+      "updatedAt": "2024-03-23T14:10:00Z",
+      "branch": {
+        "head": "adam/zero-copy-tok",
+        "base": "main"
+      },
+      "reviewStatus": "draft",
+      "ciStatus": "pending",
+      "ciChecks": {
+        "passed": 18,
+        "total": 20
+      },
+      "commentsCount": 6,
+      "changedFiles": 7,
+      "additions": 310,
+      "deletions": 195,
+      "labels": [
+        { "id": "l_draft", "name": "Work in Progress", "color": "#6e7681" },
+        { "id": "l_oxide", "name": "Oxide Engine", "color": "#dea584" }
+      ],
+      "assignee": {
+        "login": "adamwathan",
+        "avatarUrl": "https://github.com/adamwathan.png"
+      },
+      "reviewers": [],
+      "aiSummary": "Eliminates string reallocations during template scanning by operating directly on borrowed UTF-8 byte slices."
+    }
+  ]
+}
