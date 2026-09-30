@@ -9,11 +9,11 @@ export default function LaunchPage() {
   const isClassic = lens === 'classic';
 
   const [checklist, setChecklist] = useState([
-    { text: 'Logo refined, diff attached', done: true },
-    { text: 'Colour system: functional accents', done: true },
-    { text: 'Guidelines published as a public repo', done: true },
-    { text: 'Release notes drafted for v2.0.0', done: true },
-    { text: 'Community review: open to all', done: false },
+    { text: 'New logo finalised — before & after attached', done: true },
+    { text: 'Colour update: clearer, more meaningful accents', done: true },
+    { text: 'Design guidelines published publicly for everyone to read', done: true },
+    { text: 'What\'s-new notes written up for the release', done: true },
+    { text: 'Community review: open for anyone to weigh in', done: false },
   ]);
   const [merged, setMerged] = useState(false);
   const [sliderPos, setSliderPos] = useState(50);
@@ -84,12 +84,12 @@ export default function LaunchPage() {
           <div className="bg-ship-green text-white px-3 py-1 rounded-sm text-sm font-bold flex items-center space-x-1 uppercase">
             <GitPullRequest size={16} /> <span>Open</span>
           </div>
-          <span className={`font-code text-sm ${isClassic ? 'text-gray-400' : 'text-gray-500'}`}>brand-v2 → main</span>
+          <span className={`font-code text-sm ${isClassic ? 'text-gray-400' : 'text-gray-500'}`}>new-look → live</span>
         </div>
         <h1 className={`text-4xl md:text-5xl font-display font-black tracking-tighter uppercase leading-tight ${
           isClassic ? 'text-white' : 'text-ink'
         }`}>
-          Rebrand GitHub: where we build together <span className={`font-light ${isClassic ? 'text-gray-500' : 'text-gray-400'}`}>#2024</span>
+          GitHub's New Look: Where Everyone Builds Together <span className={`font-light ${isClassic ? 'text-gray-500' : 'text-gray-400'}`}>#2024</span>
         </h1>
       </div>
 
@@ -200,9 +200,9 @@ export default function LaunchPage() {
               Release Notes
             </h3>
             <div className="text-sm space-y-4 mb-6 leading-relaxed">
-              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>What changed:</strong> The brand catches up to the product. High-contrast UI, human language, visible momentum.</p>
-              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>What deliberately didn't:</strong> The name, the mascot equity, and terminal fidelity.</p>
-              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>Why:</strong> Evolution, not erasure. The spiritual core gets stability; the expanding edge gets a workshop.</p>
+              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>What changed:</strong> The look and feel of GitHub gets a big upgrade — more contrast, friendlier words, and a design that shows progress clearly.</p>
+              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>What stayed the same:</strong> The name, the logo mascot, and every feature you already rely on. Nothing was taken away.</p>
+              <p><strong className={isClassic ? 'text-white' : 'text-ink'}>Why:</strong> GitHub has grown from a tool for hardcore coders into a place where designers, writers, and whole teams work. The design needed to catch up.</p>
               <blockquote className={`pl-4 italic p-3 ${
                 isClassic 
                   ? 'border-l-4 border-blue-500 bg-[#0d1117] text-gray-300' 

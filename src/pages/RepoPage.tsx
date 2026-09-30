@@ -171,38 +171,42 @@ function StudioRepo() {
       </div>
 
       <div className="mb-12">
-        <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-2">// Momentum this week</div>
+        <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-2">What's happened this week</div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-white border-2 border-ink p-4">
             <div className="text-4xl font-display font-black text-ship-green">34</div>
-            <div className="text-sm font-bold uppercase tracking-tight mt-1">PRs Merged</div>
+            <div className="text-sm font-bold uppercase tracking-tight mt-1">Changes merged in</div>
+            <div className="text-[10px] text-ink/50 mt-0.5">suggested edits that got approved</div>
           </div>
           <div className="bg-white border-2 border-ink p-4">
             <div className="text-4xl font-display font-black text-ink">12</div>
-            <div className="text-sm font-bold uppercase tracking-tight mt-1">Open Discussions</div>
+            <div className="text-sm font-bold uppercase tracking-tight mt-1">Open conversations</div>
+            <div className="text-[10px] text-ink/50 mt-0.5">questions and ideas being discussed</div>
           </div>
           <div className="bg-white border-2 border-ink p-4">
             <div className="text-4xl font-display font-black text-review-amber">v18.3</div>
-            <div className="text-sm font-bold uppercase tracking-tight mt-1">Latest Release</div>
+            <div className="text-sm font-bold uppercase tracking-tight mt-1">Latest version</div>
+            <div className="text-[10px] text-ink/50 mt-0.5">most recent public release</div>
           </div>
           <div className="bg-white border-2 border-ink p-4 flex flex-col justify-center items-center">
             <CheckCircle size={32} className="text-ship-green mb-1" />
-            <div className="text-sm font-bold uppercase tracking-tight">CI Health 100%</div>
+            <div className="text-sm font-bold uppercase tracking-tight">All tests passing</div>
+            <div className="text-[10px] text-ink/50 mt-0.5">automated checks are green</div>
           </div>
         </div>
       </div>
 
       <div className="mb-12">
-        <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-2">// Workflow Fabric</div>
+        <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-2">How a change travels — from idea to live</div>
         <div className="flex items-center justify-between bg-white border-2 border-ink p-6 relative overflow-x-auto">
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-ink -z-0 -translate-y-1/2 mx-12"></div>
           
           {[
-            { icon: MessageSquare, label: "Discussions", color: "text-ink", link: "/discussions" },
-            { icon: FileCode2, label: "Codespaces", color: "text-ai-blue", link: "/codespaces" },
-            { icon: GitPullRequest, label: "Review (PR)", color: "text-review-amber", link: `/${repoData.owner}/${repoData.name}/pull/28271` },
-            { icon: Play, label: "Actions", color: "text-ink", link: "/workspace" },
-            { icon: CheckCircle, label: "Ship", color: "text-ship-green", link: "/launch" },
+            { icon: MessageSquare, label: "Discuss", color: "text-ink", link: "/discussions" },
+            { icon: FileCode2, label: "Write code", color: "text-ai-blue", link: "/codespaces" },
+            { icon: GitPullRequest, label: "Suggest change", color: "text-review-amber", link: `/${repoData.owner}/${repoData.name}/pull/28271` },
+            { icon: Play, label: "Auto-test", color: "text-ink", link: "/workspace" },
+            { icon: CheckCircle, label: "Ship it!", color: "text-ship-green", link: "/launch" },
           ].map((node, i) => (
             <Link to={node.link} key={i} className="z-10 flex flex-col items-center bg-white px-2 cursor-pointer group">
               <div className={`w-12 h-12 border-2 border-ink bg-white flex items-center justify-center rounded-sm mb-2 group-hover:-translate-y-1 transition ${node.color}`}>
@@ -212,7 +216,7 @@ function StudioRepo() {
             </Link>
           ))}
         </div>
-        <p className="text-xs text-ink/60 mt-2 text-center">Unified pipeline: ideas to shipped code.</p>
+        <p className="text-xs text-ink/60 mt-2 text-center">Click any step to explore that part of the process.</p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -251,7 +255,8 @@ function StudioRepo() {
         </div>
 
         <div>
-           <h3 className="text-2xl font-display font-black uppercase tracking-tight mb-4">Active Builders</h3>
+           <h3 className="text-2xl font-display font-black uppercase tracking-tight mb-4">Top contributors</h3>
+           <p className="text-xs text-ink/60 mb-4">People actively working on this project right now.</p>
            <div className="space-y-4">
              {['gnoff', 'sebmarkbage', 'acdlite', 'gaearon'].map((user) => (
                <Link 
@@ -264,7 +269,7 @@ function StudioRepo() {
                  </div>
                  <div>
                    <div className="font-bold">{user}</div>
-                   <div className="text-xs text-gray-500">Shipping Client APIs</div>
+                   <div className="text-xs text-gray-500">Core team member</div>
                  </div>
                </Link>
              ))}

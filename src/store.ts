@@ -29,8 +29,8 @@ export interface TourStep {
 export const TOUR_STEPS: TourStep[] = [
   {
     id: 'welcome',
-    title: '👋 Welcome to the GitHub v2.0 Concept Demo',
-    body: "This is a live, interactive prototype of a redesigned GitHub. You'll be guided through each key surface — Classic, Studio, Pull Requests, and more. Press Next to begin.",
+    title: '👋 Welcome! Here\'s what this is',
+    body: "GitHub is where millions of people store, share, and work on code together — think of it like Google Docs, but for software. This demo shows what a redesigned GitHub could look like. Press Next to take a quick look around.",
     target: null,
     route: '/react/react',
     lens: 'classic',
@@ -38,8 +38,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'repo-classic',
-    title: '📁 The Repo — Classic Lens',
-    body: 'This is the react/react repository in Classic lens. Dense, keyboard-first, terminal-fidelity. Notice the familiar dark canvas, monospace fonts, and the Star / Fork / Watch controls.',
+    title: '📁 A Project Page — Dark Style',
+    body: 'This is a project page for "React" — one of the world\'s most popular tools for building websites. You can see the files, how many people are watching it, and how many have "starred" it (like a bookmark). This is the classic dark look.',
     target: '[data-tour="repo-header"]',
     route: '/react/react',
     lens: 'classic',
@@ -47,8 +47,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'lens-switcher',
-    title: '🔄 The Dual-Lens Switcher',
-    body: 'This toggle lets you switch between Classic (developer-native) and Studio (activity-first, social) views of the same data. Press Peek for a live side-by-side split view.',
+    title: '🔄 Two Looks, Same Content',
+    body: 'See those two buttons — Classic and Studio? They\'re like switching between dark mode and light mode, but much more than just colors. The content stays the same; only how it\'s presented changes. Try clicking "Peek" to see both side by side.',
     target: '[data-tour="lens-switcher"]',
     route: '/react/react',
     lens: 'classic',
@@ -57,8 +57,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'repo-studio',
-    title: '🎨 Same Repo — Studio Lens',
-    body: 'Same data, completely different energy. Tactile paper canvas, neo-brutalist ink borders, vibrant accents. Studio makes code feel collaborative and alive.',
+    title: '🎨 The Same Page — Bright & Bold',
+    body: 'Same project, totally different feel. The Studio look uses a warm paper background, bold borders, and bright colours — designed to feel more welcoming and less like staring at a terminal screen.',
     target: '[data-tour="repo-header"]',
     route: '/react/react',
     lens: 'studio',
@@ -67,8 +67,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'pr-conversation',
-    title: '💬 Pull Request — Live Timeline',
-    body: 'PR #28271 has a full interactive timeline: commits, CI checks, and review approvals. Studio turns code review into a live workshop. The Merge button ships to production.',
+    title: '💬 Proposing a Change — Like a Suggestion Box',
+    body: 'When someone wants to change the code, they don\'t just edit it directly — they submit a "suggestion" called a Pull Request. Others can review it, leave comments, approve or reject it. This page shows the full conversation around one real suggestion.',
     target: '[data-tour="pr-timeline"]',
     route: '/react/react/pull/28271',
     lens: 'studio',
@@ -76,8 +76,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'pr-files',
-    title: '🗂️ Files Changed — The Diff',
-    body: "Studio's diff view transforms raw code hunks into a readable story. Use Unified / Split to switch modes. Press J / K to jump between files.",
+    title: '🗂️ What Changed — Side by Side',
+    body: 'This shows exactly what lines of code were added (green) or removed (red) in the suggestion. It\'s like Track Changes in Microsoft Word — you can see before and after at a glance.',
     target: '[data-tour="diff-toolbar"]',
     route: '/react/react/pull/28271/changes',
     lens: 'studio',
@@ -85,8 +85,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'profile',
-    title: '🧑‍💻 Living Developer Profile',
-    body: 'Contribution graph, pinned repos, and in Studio — a shareable build card. Click any day on the graph to see activity details. Your work, your narrative.',
+    title: '🧑‍💻 A Developer\'s Public Profile',
+    body: 'Every GitHub user has a profile page that shows their work history. The coloured grid you see is a "contribution graph" — each square is a day, and darker squares mean more work was done that day. Click any square to see what happened.',
     target: '[data-tour="profile-graph"]',
     route: '/shadcn',
     lens: 'studio',
@@ -94,8 +94,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'launch',
-    title: '🚀 The Launch PR',
-    body: 'The v2.0 brand rebrand as a Pull Request. Interactive checklist, before/after logo slider, and a satisfying Merge button that ships to production. GitHub eating its own dogfood.',
+    title: '🚀 The Big Release — Shipped Like a PR',
+    body: 'Here\'s the fun part: this entire rebrand concept was packaged as a GitHub "suggestion" (Pull Request) itself. There\'s a checklist, a before/after logo comparison you can drag, and a big green Merge button. Click it to see what happens when a release ships.',
     target: '[data-tour="merge-btn"]',
     route: '/launch',
     lens: 'studio',
@@ -103,8 +103,8 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'brand',
-    title: '🎯 Brand System',
-    body: 'The complete design system — dual-audience rings, go-to-market stepper, and live design token previews for both lenses. Every surface is built on these tokens.',
+    title: '🎯 The Design System Behind It All',
+    body: 'Every colour, font size, and spacing rule in this redesign is documented here. Think of it as the style guide or rulebook — designers and engineers use it to make sure everything looks consistent across the whole product.',
     target: '[data-tour="brand-stepper"]',
     route: '/brand',
     lens: 'studio',
@@ -112,14 +112,15 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: 'finish',
-    title: '✅ Tour Complete!',
-    body: "You've seen the full GitHub v2.0 concept. Now explore freely — every element is interactive. Switch lenses, open modals, star repos, trigger the merge animation. Press Shift+P for presenter controls.",
+    title: '✅ You\'re all caught up!',
+    body: "That's the whole concept. Now you can explore freely — click anything, star a project, flip between the two looks, or hit the big Merge button on the Launch page for a fun surprise. Everything is interactive and safe to click.",
     target: null,
     route: null,
     lens: null,
     placement: 'center',
   },
 ];
+
 
 interface AppState {
   lens: Lens;

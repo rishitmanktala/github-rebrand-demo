@@ -338,7 +338,7 @@ function StudioPR() {
         <div className="flex items-center justify-between">
           <div className="flex space-x-2">
             <div className={`px-3 py-1 font-bold uppercase text-xs tracking-wide border-2 border-ink ${merged ? 'bg-merge-purple text-white' : 'bg-ship-green text-white'}`}>
-              {merged ? 'Merged' : 'Open'}
+              {merged ? 'Merged ✓' : 'Open'}
             </div>
             <div className="px-3 py-1 bg-white border-2 border-ink font-bold uppercase text-xs text-ink tracking-wide">
               {prData.author}
@@ -348,13 +348,13 @@ function StudioPR() {
           <div className="flex items-center space-x-1">
              {/* Status Stepper */}
              <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-tight">
-               <div className="flex items-center space-x-1 text-ship-green"><CheckCircle size={14}/> <span>Opened</span></div>
+               <div className="flex items-center space-x-1 text-ship-green"><CheckCircle size={14}/> <span>Submitted</span></div>
                <div className="w-4 h-0.5 bg-ink"></div>
-               <div className="flex items-center space-x-1 text-review-amber"><CheckCircle size={14}/> <span>In Review</span></div>
+               <div className="flex items-center space-x-1 text-review-amber"><CheckCircle size={14}/> <span>Being reviewed</span></div>
                <div className="w-4 h-0.5 bg-ink"></div>
-               <div className="flex items-center space-x-1 text-ship-green"><CheckCircle size={14}/> <span>Checks Pass</span></div>
+               <div className="flex items-center space-x-1 text-ship-green"><CheckCircle size={14}/> <span>Tests passed</span></div>
                <div className="w-4 h-0.5 bg-ink"></div>
-               <div className={`flex items-center space-x-1 ${merged ? 'text-merge-purple' : 'text-ink/60'}`}><GitMerge size={14}/> <span>Merged</span></div>
+               <div className={`flex items-center space-x-1 ${merged ? 'text-merge-purple' : 'text-ink/60'}`}><GitMerge size={14}/> <span>Merged in</span></div>
              </div>
           </div>
         </div>
@@ -418,10 +418,11 @@ function StudioPR() {
 
         <div className="space-y-6">
           <div id="checks-grid" className="bg-white border-2 border-ink p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="font-display font-black uppercase text-xl">Checks <span className="text-ship-green text-sm ml-2">12/12</span></h3>
-              <span className="text-[11px] font-bold uppercase text-ink/60">Click to inspect</span>
+            <div className="flex justify-between items-center mb-2">
+              <h3 className="font-display font-black uppercase text-xl">Automated Tests <span className="text-ship-green text-sm ml-2">12/12 ✓</span></h3>
+              <span className="text-[11px] font-bold uppercase text-ink/60">All passed</span>
             </div>
+            <p className="text-xs text-ink/60 mb-4">These run automatically whenever a change is submitted — like a safety net. Click any box to see the details.</p>
             
             <div className="grid grid-cols-4 gap-2 mb-6">
               {CI_JOBS.map((job, i) => (

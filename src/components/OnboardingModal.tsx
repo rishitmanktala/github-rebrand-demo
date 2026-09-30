@@ -38,8 +38,8 @@ export default function OnboardingModal() {
         className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm flex items-center justify-center font-people"
       >
         <div className="bg-canvas text-paper border border-gray-700 rounded-xl p-8 max-w-3xl w-full mx-4 shadow-2xl">
-          <h2 className="text-3xl font-display font-black tracking-tighter uppercase mb-2 text-center">How do you like to work?</h2>
-          <p className="text-gray-400 text-center mb-8">You can switch anytime. Nothing is exclusive to either.</p>
+          <h2 className="text-3xl font-display font-black tracking-tighter uppercase mb-2 text-center">Pick your vibe</h2>
+          <p className="text-gray-400 text-center mb-8">Same app, two looks. You can flip between them anytime — nothing is locked.</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <button 
@@ -50,7 +50,7 @@ export default function OnboardingModal() {
                 <Terminal size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3">Classic</h3>
-              <p className="text-gray-400 text-sm text-center">Dense, fast, keyboard-first. The GitHub you know.</p>
+              <p className="text-gray-400 text-sm text-center">Dark background, compact layout. Looks exactly like GitHub today — great if you already use it.</p>
             </button>
 
             <button 
@@ -61,7 +61,7 @@ export default function OnboardingModal() {
                 <Users size={32} />
               </div>
               <h3 className="text-xl font-bold mb-3 font-display uppercase tracking-tight">Studio</h3>
-              <p className="text-gray-600 text-sm text-center">Activity-first, guided, social. Where we build together.</p>
+              <p className="text-gray-600 text-sm text-center">Light, bold, and friendly. Built for teams and creators — think of it as GitHub with a fresh coat of paint.</p>
             </button>
           </div>
 
@@ -70,10 +70,10 @@ export default function OnboardingModal() {
             <div>
               <div className="flex items-center space-x-2 mb-1">
                 <Map size={16} className="text-highlight-yellow" />
-                <span className="font-bold text-sm text-white">Guided Tour</span>
+                <span className="font-bold text-sm text-white">Quick Walkthrough</span>
               </div>
               <p className="text-xs text-gray-400">
-                We'll walk you through every surface — takes about 2 minutes.
+                New to GitHub? We'll show you around — takes about 2 minutes.
               </p>
             </div>
             <div className="flex items-center space-x-3 flex-shrink-0">
@@ -81,14 +81,14 @@ export default function OnboardingModal() {
                 onClick={() => handleSkipTour('classic')}
                 className="text-xs text-gray-500 hover:text-gray-300 transition underline"
               >
-                Skip, explore freely
+                Skip, I'll explore on my own
               </button>
               <button
                 onClick={() => { handleSelect('studio'); }}
                 className="px-5 py-2.5 bg-highlight-yellow text-ink font-bold text-sm uppercase tracking-wide border-2 border-ink shadow-[3px_3px_0px_0px_rgba(10,10,10,1)] hover:translate-y-px hover:shadow-[2px_2px_0px_0px_rgba(10,10,10,1)] transition flex items-center space-x-2"
               >
                 <Map size={14} />
-                <span>Take the Tour</span>
+                <span>Show Me Around</span>
               </button>
             </div>
           </div>

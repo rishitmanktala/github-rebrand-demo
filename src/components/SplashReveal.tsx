@@ -71,7 +71,7 @@ export default function SplashReveal() {
             transition={{ delay: 2.2 }}
             className="text-gray-400 text-sm tracking-widest uppercase font-display"
           >
-            v2.0.0 — Where we build together.
+            A fresh look for GitHub — built together.
           </motion.div>
         </div>
       </motion.div>

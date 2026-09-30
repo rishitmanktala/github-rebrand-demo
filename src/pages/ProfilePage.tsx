@@ -4,19 +4,101 @@ import { Users, Star, Share2, BookMarked, FolderGit2, Package, Search, X, Check,
 import { Link, useSearchParams } from 'react-router-dom';
 import profileData from '../data/profile.shadcn.json';
 
-// Generate a static graph once when the module loads so it doesn't shuffle on re-renders
-const staticContributionData = Array.from({length: 50}).map(() => 
-  Array.from({length: 7}).map(() => Math.floor(Math.random() * 5) as 0|1|2|3|4)
-);
-
-interface DayDetail {
-  day: number;
-  contribs: number | string;
-  date: string;
+// Generate deterministic 52-week contribution data ending today
+export interface ContributionDay {
+  dayIndex: number;
+  col: number;
+  row: number;
+  level: 0 | 1 | 2 | 3 | 4;
+  contribs: number;
+  dateStr: string;
 }
 
-function ContributionDetailModal({ dayDetail, onClose, isClassic }: { dayDetail: DayDetail | null; onClose: () => void; isClassic: boolean }) {
+const WEEKS_COUNT = 52;
+const END_DATE = new Date(2026, 9, 1); // Oct 1, 2026
+
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+const staticContributionColumns: ContributionDay[][] = Array.from({ length: WEEKS_COUNT }).map((_, col) => {
+  return Array.from({ length: 7 }).map((_, row) => {
+    const dayOffset = (51 - col) * 7 + (6 - row);
+    const dayDate = new Date(END_DATE.getTime() - dayOffset * 86400000);
+    const dateStr = dayDate.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+
+    const isWeekend = row === 0 || row === 6;
+    const seed = col * 7 + row + 42;
+    const rand = seededRandom(seed);
+
+    let level: 0 | 1 | 2 | 3 | 4 = 0;
+    let contribs = 0;
+
+    if (isWeekend) {
+      if (rand > 0.6) {
+        level = (Math.floor(rand * 3) + 1) as 1 | 2 | 3;
+        contribs = level * 3 + Math.floor(rand * 4);
+      }
+    } else {
+      if (rand > 0.15) {
+        level = (Math.floor(rand * 4) + 1) as 1 | 2 | 3 | 4;
+        contribs = level * 3 + Math.floor(rand * 5);
+      }
+    }
+
+    return {
+      dayIndex: col * 7 + row,
+      col,
+      row,
+      level,
+      contribs,
+      dateStr
+    };
+  });
+});
+
+// Month label positions (which column index begins each month)
+const monthLabels: { col: number; name: string }[] = [];
+let prevMonth = -1;
+for (let col = 0; col < WEEKS_COUNT; col++) {
+  const dayOffset = (51 - col) * 7 + 6;
+  const d = new Date(END_DATE.getTime() - dayOffset * 86400000);
+  const m = d.getMonth();
+  if (m !== prevMonth) {
+    monthLabels.push({
+      col,
+      name: d.toLocaleDateString('en-US', { month: 'short' })
+    });
+    prevMonth = m;
+  }
+}
+
+const CLASSIC_COLORS = [
+  'bg-contrib-0',
+  'bg-contrib-1',
+  'bg-contrib-2',
+  'bg-contrib-3',
+  'bg-contrib-4'
+];
+
+const STUDIO_COLORS = [
+  'bg-[#EBEDF0]',
+  'bg-[#9BE9A8]',
+  'bg-[#40C463]',
+  'bg-[#30A14E]',
+  'bg-[#216E39]'
+];
+
+function ContributionDetailModal({ dayDetail, onClose, isClassic }: { dayDetail: ContributionDay | null; onClose: () => void; isClassic: boolean }) {
   if (!dayDetail) return null;
+
+  const hasContribs = dayDetail.contribs > 0;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={onClose}>
@@ -37,25 +119,116 @@ function ContributionDetailModal({ dayDetail, onClose, isClassic }: { dayDetail:
         </button>
 
         <h3 className={`text-lg font-bold mb-1 ${isClassic ? 'font-classic' : 'font-display uppercase tracking-tight'}`}>
-          Activity on {dayDetail.date}
+          Activity on {dayDetail.dateStr}
         </h3>
         <p className={`text-xs mb-4 ${isClassic ? 'text-gray-400' : 'text-gray-600 font-semibold'}`}>
-          {dayDetail.contribs} contributions recorded
+          {dayDetail.contribs === 0 ? 'No' : dayDetail.contribs} contributions recorded
         </p>
 
-        <div className={`p-3 rounded border divide-y ${isClassic ? 'bg-[#0d1117] border-gray-800 divide-gray-800 text-xs' : 'bg-white border-2 border-ink divide-y-2 divide-ink text-xs font-medium'}`}>
-          <div className="py-2 first:pt-0">
-            <span className="font-bold text-ship-green block">Merged Pull Request</span>
-            <span className="opacity-90">facebook/react#28271: Move client React DOM APIs</span>
+        {hasContribs ? (
+          <div className={`p-3 rounded border divide-y ${isClassic ? 'bg-[#0d1117] border-gray-800 divide-gray-800 text-xs' : 'bg-white border-2 border-ink divide-y-2 divide-ink text-xs font-medium'}`}>
+            <div className="py-2 first:pt-0">
+              <span className="font-bold text-ship-green block">Merged Pull Request</span>
+              <span className="opacity-90">facebook/react#28271: Move client React DOM APIs</span>
+            </div>
+            <div className="py-2">
+              <span className="font-bold text-merge-purple block">Commits</span>
+              <span className="opacity-90">{Math.max(1, Math.round(dayDetail.contribs * 0.6))} commits pushed to shadcn/ui:main</span>
+            </div>
+            <div className="py-2 last:pb-0">
+              <span className="font-bold text-ai-blue block">Code Review</span>
+              <span className="opacity-90">{Math.max(1, Math.round(dayDetail.contribs * 0.4))} discussions and RFC reviews</span>
+            </div>
           </div>
-          <div className="py-2">
-            <span className="font-bold text-merge-purple block">Commits</span>
-            <span className="opacity-90">4 commits pushed to shadcn/ui:main</span>
+        ) : (
+          <div className={`p-4 rounded border text-center ${isClassic ? 'bg-[#0d1117] border-gray-800 text-gray-400 text-xs' : 'bg-white border-2 border-ink text-ink/70 text-xs'}`}>
+            No contributions recorded on this day.
           </div>
-          <div className="py-2 last:pb-0">
-            <span className="font-bold text-ai-blue block">Code Review</span>
-            <span className="opacity-90">Approved RFC for accessible modal transitions</span>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ContributionCalendar({
+  isClassic,
+  onSelectDay
+}: {
+  isClassic: boolean;
+  onSelectDay: (day: ContributionDay) => void;
+}) {
+  const colors = isClassic ? CLASSIC_COLORS : STUDIO_COLORS;
+  const dayNames = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
+
+  return (
+    <div className="overflow-x-auto pb-2">
+      <div className="min-w-fit">
+        {/* Month labels row */}
+        <div className="relative h-4 mb-1.5 ml-6 text-[10px] select-none">
+          {monthLabels.map((m) => (
+            <span
+              key={`${m.name}-${m.col}`}
+              className={`absolute top-0 font-medium ${
+                isClassic ? 'text-gray-400' : 'text-ink/70 font-semibold'
+              }`}
+              style={{ left: `${m.col * 12}px` }}
+            >
+              {m.name}
+            </span>
+          ))}
+        </div>
+
+        {/* Days labels and grid */}
+        <div className="flex">
+          {/* Day of week labels */}
+          <div className="flex flex-col gap-[2px] pr-1.5 w-6 text-right select-none justify-between">
+            {dayNames.map((d, i) => (
+              <span
+                key={i}
+                className={`h-[10px] text-[9px] leading-[10px] block font-medium ${
+                  isClassic ? 'text-gray-500' : 'text-ink/60'
+                }`}
+              >
+                {d}
+              </span>
+            ))}
           </div>
+
+          {/* 52 columns */}
+          <div className="flex gap-[2px]">
+            {staticContributionColumns.map((colData, colIndex) => (
+              <div key={colIndex} className="flex flex-col gap-[2px]">
+                {colData.map((day) => (
+                  <button
+                    key={day.dayIndex}
+                    type="button"
+                    onClick={() => onSelectDay(day)}
+                    className={`w-[10px] h-[10px] rounded-[2px] ${colors[day.level]} ${
+                      isClassic
+                        ? 'border border-transparent hover:border-gray-300'
+                        : 'border border-ink/15 hover:border-ink hover:scale-125 hover:z-10 shadow-[0_1px_1px_rgba(0,0,0,0.05)]'
+                    } transition-all cursor-pointer`}
+                    title={`${day.contribs === 0 ? 'No' : day.contribs} contributions on ${day.dateStr} (Click for details)`}
+                    aria-label={`${day.contribs} contributions on ${day.dateStr}`}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Legend */}
+        <div className="flex items-center justify-end space-x-1.5 mt-3 pt-2 text-[11px] select-none">
+          <span className={isClassic ? 'text-gray-400 text-xs' : 'text-ink/60 font-medium'}>Less</span>
+          {colors.map((c, i) => (
+            <div
+              key={i}
+              className={`w-[10px] h-[10px] rounded-[2px] ${c} ${
+                isClassic ? 'border border-gray-700' : 'border border-ink/20'
+              }`}
+            />
+          ))}
+          <span className={isClassic ? 'text-gray-400 text-xs' : 'text-ink/60 font-medium'}>More</span>
         </div>
       </div>
     </div>
@@ -65,7 +238,7 @@ function ContributionDetailModal({ dayDetail, onClose, isClassic }: { dayDetail:
 function ClassicProfile() {
   const { addToast, starredRepos, toggleStarRepo } = useAppStore();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [selectedDay, setSelectedDay] = useState<DayDetail | null>(null);
+  const [selectedDay, setSelectedDay] = useState<ContributionDay | null>(null);
   const [repoSearch, setRepoSearch] = useState('');
   
   const currentTab = searchParams.get('tab') || 'overview';
@@ -172,28 +345,7 @@ function ClassicProfile() {
             <div data-tour="profile-graph">
                <h3 className="text-gray-400 text-sm mb-2 font-semibold">4,815 contributions in the last year</h3>
                <div className="border border-gray-700 rounded-md p-4 bg-[#161b22]">
-                 <div className="flex gap-1 overflow-x-hidden">
-                   {staticContributionData.map((colData, col) => (
-                     <div key={col} className="flex flex-col gap-1">
-                       {colData.map((level, row) => {
-                         const colors = ["bg-contrib-0", "bg-contrib-1", "bg-contrib-2", "bg-contrib-3", "bg-contrib-4"];
-                         const contribs = level === 0 ? 'No' : level * 3;
-                         return (
-                           <div 
-                             key={row} 
-                             onClick={() => setSelectedDay({
-                               day: col * 7 + row,
-                               contribs,
-                               date: `Week ${col + 1}, Day ${row + 1}`
-                             })} 
-                             className={`w-2.5 h-2.5 rounded-sm ${colors[level]} cursor-pointer hover:border-gray-500 hover:border`} 
-                             title={`${contribs} contributions on Week ${col + 1}, Day ${row + 1} (Click for details)`}
-                           ></div>
-                         );
-                       })}
-                     </div>
-                   ))}
-                 </div>
+                 <ContributionCalendar isClassic={true} onSelectDay={setSelectedDay} />
                </div>
             </div>
           </div>
@@ -322,7 +474,7 @@ function ClassicProfile() {
 
 function StudioProfile() {
   const [showShare, setShowShare] = React.useState(false);
-  const [selectedDay, setSelectedDay] = useState<DayDetail | null>(null);
+  const [selectedDay, setSelectedDay] = useState<ContributionDay | null>(null);
   const { addToast, starredRepos, toggleStarRepo } = useAppStore();
 
   const handleCopyBadge = () => {
@@ -410,41 +562,21 @@ function StudioProfile() {
 
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2 space-y-8">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">// The Public Build Canvas</div>
+          <div data-tour="profile-graph">
+            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Work history — every green square is a day with activity</div>
+            <div className="text-[10px] text-gray-400 mb-4">Darker = more work done that day. Click any square to see what happened.</div>
             <div className="bg-white border-2 border-ink p-6 shadow-sm">
-               <div className="flex gap-2 justify-center flex-wrap">
-                 {staticContributionData.map((colData, col) => (
-                   <div key={col} className="flex flex-col gap-2">
-                     {colData.map((level, row) => {
-                       const colors = ["bg-gray-100", "bg-green-200", "bg-green-400", "bg-ship-green", "bg-green-700"];
-                       const contribs = level === 0 ? 'No' : level * 3;
-                       return (
-                         <div 
-                           key={row} 
-                           onClick={() => setSelectedDay({
-                             day: col * 7 + row,
-                             contribs,
-                             date: `Week ${col + 1}, Day ${row + 1}`
-                           })} 
-                           className={`w-4 h-4 sm:w-5 sm:h-5 rounded-sm ${colors[level]} cursor-pointer hover:border-2 hover:border-ink transition-all`} 
-                           title={`${contribs} contributions on Week ${col + 1}, Day ${row + 1} (Click for details)`}
-                         ></div>
-                       );
-                     })}
-                   </div>
-                 ))}
-               </div>
-               <div className="mt-6 flex justify-between items-center text-sm font-bold uppercase tracking-tighter border-t-2 border-ink pt-4">
-                 <div>122 Day Streak</div>
-                 <div className="text-ship-green">4,815 Contributions</div>
-                 <div>Longest: 180 Days</div>
+               <ContributionCalendar isClassic={false} onSelectDay={setSelectedDay} />
+               <div className="mt-4 flex flex-wrap justify-between items-center text-sm font-bold uppercase tracking-tighter border-t-2 border-ink pt-4">
+                 <div>122 Day Streak 🔥</div>
+                 <div className="text-ship-green">4,815 total contributions</div>
+                 <div>Best: 180 days</div>
                </div>
             </div>
           </div>
           
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">// Living Portfolio</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Pinned projects — click to explore</div>
             <div className="grid grid-cols-2 gap-4">
               {profileData.pinnedRepos.map((repo, idx) => {
                 const isStarred = Boolean(starredRepos[repo.repoName]);
@@ -482,18 +614,24 @@ function StudioProfile() {
         <div>
           <div className="bg-highlight-yellow border-2 border-ink p-6 mb-8 shadow-sm">
             <h3 className="font-display font-black text-xl uppercase mb-1">Shipped this week</h3>
-            <p className="text-sm font-bold text-gray-700 mb-4 tracking-tighter">Visible momentum.</p>
+            <p className="text-sm font-bold text-gray-700 mb-4 tracking-tighter">A snapshot of recent activity.</p>
             <div className="space-y-4">
               <div className="flex justify-between items-center border-b-2 border-ink pb-2">
-                <span className="font-bold">Merged PRs</span>
+                <div>
+                  <span className="font-bold block">Changes approved</span>
+                  <span className="text-[10px] text-gray-600">suggestions merged in</span>
+                </div>
                 <span className="text-2xl font-black">12</span>
               </div>
               <div className="flex justify-between items-center border-b-2 border-ink pb-2">
-                <span className="font-bold">Commits</span>
+                <div>
+                  <span className="font-bold block">Saves (commits)</span>
+                  <span className="text-[10px] text-gray-600">individual code saves</span>
+                </div>
                 <span className="text-2xl font-black">45</span>
               </div>
               <div className="flex justify-between items-center border-b-2 border-ink pb-2">
-                <span className="font-bold">Reviews</span>
+                <span className="font-bold">Reviews given</span>
                 <span className="text-2xl font-black">8</span>
               </div>
             </div>

@@ -200,22 +200,22 @@ function StudioDiscussions() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
           <div className="inline-block bg-highlight-yellow text-ink border-2 border-ink px-3 py-0.5 text-xs font-bold uppercase tracking-widest mb-3">
-            Civic Discourse
+            Open Conversations
           </div>
           <h1 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-ink">
             Community Voice
           </h1>
           <p className="text-base text-ink/70 font-medium mt-1">
-            Democratic RFC voting, architectural debates, and maintainer consensus tracking.
+            Ask questions, share ideas, vote on proposals, and see what the community is saying.
           </p>
         </div>
 
         <button
-          onClick={() => addToast('Opening Proposal Draftpad', 'info')}
+          onClick={() => addToast('Opening a new discussion — what\'s on your mind?', 'info')}
           className="bg-ink text-paper-warm px-5 py-3 font-bold uppercase tracking-wider text-xs border-2 border-ink shadow-[4px_4px_0px_0px_rgba(10,10,10,1)] hover:translate-y-0.5 hover:shadow-none transition flex items-center justify-center space-x-2"
         >
           <Sparkles size={16} />
-          <span>Start Open Debate</span>
+          <span>Start a Discussion</span>
         </button>
       </div>
 
@@ -225,7 +225,7 @@ function StudioDiscussions() {
           <div className="flex-1">
             <div className="flex items-center space-x-2 mb-2">
               <span className="text-xs font-black uppercase px-2 py-0.5 bg-highlight-yellow border border-ink">
-                Featured Maintainer Announcement
+                Pinned by Maintainers
               </span>
               <span className="text-xs font-bold text-ink/60">{discussionsData.discussions[0].createdAt}</span>
             </div>
@@ -239,7 +239,7 @@ function StudioDiscussions() {
               <img src={discussionsData.discussions[0].author.avatarUrl} alt="" className="w-5 h-5 rounded-full border border-ink" />
               <span>{discussionsData.discussions[0].author.login} ({discussionsData.discussions[0].author.badge})</span>
               <span>•</span>
-              <span>{discussionsData.discussions[0].answersCount} Responses</span>
+              <span>{discussionsData.discussions[0].answersCount} Replies</span>
             </div>
           </div>
 
@@ -252,7 +252,7 @@ function StudioDiscussions() {
             }`}
           >
             <ChevronUp size={20} />
-            <span>Endorse ({upvotes[discussionsData.discussions[0].id]})</span>
+            <span>👍 Agree ({upvotes[discussionsData.discussions[0].id]})</span>
           </button>
         </div>
       </div>
@@ -288,7 +288,7 @@ function StudioDiscussions() {
                     </span>
                     {d.isAnswered && (
                       <span className="text-[10px] font-black uppercase px-2 py-0.5 border border-ink bg-[#c8e6c9] text-[#1b5e20]">
-                        Consensus Reached
+                        ✓ Resolved
                       </span>
                     )}
                   </div>
@@ -312,7 +312,7 @@ function StudioDiscussions() {
 
               <div className="flex items-center space-x-2 text-xs font-bold text-ink/80 flex-shrink-0 pt-2 md:pt-0">
                 <MessageSquare size={16} />
-                <span>{d.answersCount} comments</span>
+                <span>{d.answersCount} replies</span>
               </div>
             </div>
           );

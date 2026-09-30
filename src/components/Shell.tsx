@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAppStore } from '../store';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Search, Plus, Bell, User, X } from 'lucide-react';
+import { Github, Search, Plus, Bell, User, X, HelpCircle, Map, BookOpen, PlayCircle } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import CreateRepoModal from './CreateRepoModal';
 import CreateCodespaceModal from './CreateCodespaceModal';
@@ -345,26 +345,25 @@ function PeekModal() {
             <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-800">
               <div className="flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                <span className="font-bold text-sm">Classic Lens</span>
+                <span className="font-bold text-sm">Classic — Dark Look</span>
               </div>
               {lens === 'classic' && <span className="text-[10px] bg-gray-800 text-gray-400 px-2 py-0.5 rounded border border-gray-700">ACTIVE</span>}
             </div>
             <div className="space-y-4 text-xs">
               <div className="bg-[#161b22] border border-gray-700 rounded p-3">
-                <div className="text-gray-400 text-[11px] mb-1 font-semibold">Philosophy</div>
-                <p className="text-gray-200 leading-relaxed">Dense, high-information-density dark canvas (#0D1117), monospace font stacks, and terminal fidelity for speed and precision.</p>
+                <div className="text-gray-400 text-[11px] mb-1 font-semibold">What it is</div>
+                <p className="text-gray-200 leading-relaxed">Dark background, compact layout, small text. Designed for people who use GitHub every day and want everything dense and fast — like a power-user's dashboard.</p>
               </div>
               <div className="bg-[#161b22] border border-gray-700 rounded p-3 space-y-2">
-                <div className="text-gray-400 text-[11px] font-semibold">Design Tokens</div>
+                <div className="text-gray-400 text-[11px] font-semibold">Key colours</div>
                 <div className="flex flex-wrap gap-1.5">
-                  <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-mono">#0D1117 Canvas</span>
-                  <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-mono">#161B22 Sub-canvas</span>
-                  <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-mono">#30363D Border</span>
-                  <span className="px-2 py-0.5 rounded bg-gray-800 text-blue-400 text-[10px] font-mono">#58A6FF Accent</span>
+                  <span className="px-2 py-0.5 rounded bg-gray-900 text-gray-300 text-[10px] font-mono">Very dark background</span>
+                  <span className="px-2 py-0.5 rounded bg-gray-800 text-gray-300 text-[10px] font-mono">Dark card backgrounds</span>
+                  <span className="px-2 py-0.5 rounded bg-gray-800 text-blue-400 text-[10px] font-mono">Blue highlights</span>
                 </div>
               </div>
               <div className="bg-[#161b22] border border-gray-700 rounded p-3">
-                <div className="text-gray-400 text-[11px] mb-1 font-semibold">Terminal Sample</div>
+                <div className="text-gray-400 text-[11px] mb-1 font-semibold">Sample: a line of code added</div>
                 <div className="font-mono text-[11px] bg-diff-green/20 text-diff-green px-2 py-1 rounded">
                   + export function useDualLens(): LensState;
                 </div>
@@ -385,28 +384,28 @@ function PeekModal() {
             <div className="flex items-center justify-between mb-4 pb-2 border-b-2 border-ink">
               <div className="flex items-center space-x-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-highlight-yellow border border-ink" />
-                <span className="font-display font-black text-sm uppercase">Studio Lens</span>
+                <span className="font-display font-black text-sm uppercase">Studio — Light & Bold</span>
               </div>
               {lens === 'studio' && <span className="text-[10px] bg-ink text-paper-warm px-2 py-0.5 font-bold uppercase">ACTIVE</span>}
             </div>
             <div className="space-y-4 text-xs">
               <div className="bg-white border-2 border-ink p-3 shadow-[3px_3px_0px_0px_rgba(10,10,10,1)]">
-                <div className="text-ink/60 text-[11px] font-bold uppercase mb-1">Philosophy</div>
-                <p className="font-medium text-ink leading-relaxed">Tactile paper canvas (#EDECE9), neo-brutalist ink borders (border-2 border-ink), Figtree typography, and vibrant studio accents.</p>
+                <div className="text-ink/60 text-[11px] font-bold uppercase mb-1">What it is</div>
+                <p className="font-medium text-ink leading-relaxed">Warm paper background, bold black borders, large friendly text. Built to feel welcoming to designers, writers, and new users — not just coders.</p>
               </div>
               <div className="bg-white border-2 border-ink p-3 shadow-[3px_3px_0px_0px_rgba(10,10,10,1)] space-y-2">
-                <div className="text-ink/60 text-[11px] font-bold uppercase">Design Tokens</div>
+                <div className="text-ink/60 text-[11px] font-bold uppercase">Key colours</div>
                 <div className="flex flex-wrap gap-1.5">
-                  <span className="px-2 py-0.5 bg-paper-warm border border-ink text-ink text-[10px] font-bold">#EDECE9 Paper</span>
-                  <span className="px-2 py-0.5 bg-ship-green text-white text-[10px] font-bold">#2EA043 Ship</span>
-                  <span className="px-2 py-0.5 bg-highlight-yellow text-ink text-[10px] font-bold">#FFF9A3 Yellow</span>
-                  <span className="px-2 py-0.5 bg-merge-purple text-white text-[10px] font-bold">#8957E5 Purple</span>
+                  <span className="px-2 py-0.5 bg-paper-warm border border-ink text-ink text-[10px] font-bold">Warm Paper</span>
+                  <span className="px-2 py-0.5 bg-ship-green text-white text-[10px] font-bold">Shipped Green</span>
+                  <span className="px-2 py-0.5 bg-highlight-yellow text-ink text-[10px] font-bold">Highlight Yellow</span>
+                  <span className="px-2 py-0.5 bg-merge-purple text-white text-[10px] font-bold">Merge Purple</span>
                 </div>
               </div>
               <div className="bg-white border-2 border-ink p-3 shadow-[3px_3px_0px_0px_rgba(10,10,10,1)]">
-                <div className="text-ink/60 text-[11px] font-bold uppercase mb-1">Living Portfolio</div>
+                <div className="text-ink/60 text-[11px] font-bold uppercase mb-1">Status</div>
                 <div className="font-display font-black uppercase text-xs text-ship-green flex items-center space-x-1">
-                  <span>● v2.0 Production Ready</span>
+                  <span>● Ready to ship</span>
                 </div>
               </div>
             </div>
@@ -422,6 +421,189 @@ function PeekModal() {
         </div>
       </motion.div>
     </div>
+  );
+}
+
+function HelpButton() {
+  const [open, setOpen] = useState(false);
+  const [showWhat, setShowWhat] = useState(false);
+  const { startTour, lens } = useAppStore();
+  const navigate = useNavigate();
+
+  const isStudio = lens === 'studio';
+
+  const handleStartTour = () => {
+    setOpen(false);
+    setShowWhat(false);
+    navigate('/react/react');
+    // Small delay so navigation completes before tour spotlight fires
+    setTimeout(() => startTour(), 150);
+  };
+
+  return (
+    <>
+      {/* "What is GitHub?" explainer modal */}
+      <AnimatePresence>
+        {showWhat && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setShowWhat(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.15 }}
+              onClick={e => e.stopPropagation()}
+              className={`max-w-md w-full p-8 relative ${isStudio ? 'bg-paper-warm border-4 border-ink shadow-[8px_8px_0px_0px_rgba(10,10,10,1)] font-people' : 'bg-[#161b22] border border-gray-700 rounded-xl shadow-2xl font-classic text-white'}`}
+            >
+              <button
+                onClick={() => setShowWhat(false)}
+                className={`absolute top-4 right-4 p-1.5 rounded ${isStudio ? 'text-ink hover:bg-gray-200' : 'text-gray-400 hover:text-white'}`}
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="text-3xl mb-4">🐙</div>
+
+              <h2 className={`text-xl font-bold mb-3 ${isStudio ? 'font-display uppercase tracking-tight text-ink' : 'text-white'}`}>
+                What is GitHub?
+              </h2>
+
+              <div className={`space-y-3 text-sm leading-relaxed ${isStudio ? 'text-ink/80' : 'text-gray-300'}`}>
+                <p>
+                  <strong>GitHub is like Google Docs — but for software.</strong> Instead of documents, people store and share code here. Millions of apps, websites, and tools you use every day were built on GitHub.
+                </p>
+                <p>
+                  Anyone can <strong>suggest a change</strong> to a project (like editing a shared doc), and the team decides whether to accept it. Every accepted change is recorded, so nothing is ever lost.
+                </p>
+                <p>
+                  This demo shows what a <strong>redesigned GitHub</strong> could look like. Everything is clickable — nothing you do here is real, so explore freely.
+                </p>
+              </div>
+
+              <button
+                onClick={handleStartTour}
+                className={`mt-6 w-full py-3 text-sm font-bold uppercase tracking-wide transition ${
+                  isStudio
+                    ? 'bg-ink text-paper-warm border-2 border-ink shadow-[3px_3px_0px_0px_rgba(10,10,10,1)] hover:translate-y-0.5 hover:shadow-none'
+                    : 'bg-[#238636] hover:bg-[#2ea043] text-white rounded-md'
+                }`}
+              >
+                Take the guided tour →
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Floating help button + panel */}
+      <div className="fixed bottom-6 right-6 z-[190] flex flex-col items-end space-y-2">
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: 8, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 8, scale: 0.97 }}
+              transition={{ duration: 0.15 }}
+              className={`w-64 p-2 ${
+                isStudio
+                  ? 'bg-paper-warm border-2 border-ink shadow-[4px_4px_0px_0px_rgba(10,10,10,1)] font-people'
+                  : 'bg-[#161b22] border border-gray-700 rounded-xl shadow-2xl font-classic'
+              }`}
+            >
+              {/* Header */}
+              <div className={`px-3 py-2 mb-1 text-xs font-bold uppercase tracking-widest ${isStudio ? 'text-ink/50' : 'text-gray-500'}`}>
+                Help & Navigation
+              </div>
+
+              {/* Option 1: Take the tour */}
+              <button
+                onClick={handleStartTour}
+                className={`w-full flex items-center space-x-3 px-3 py-2.5 text-sm font-semibold text-left transition rounded-sm ${
+                  isStudio
+                    ? 'hover:bg-highlight-yellow text-ink'
+                    : 'hover:bg-gray-800 text-gray-200'
+                }`}
+              >
+                <PlayCircle size={16} className={isStudio ? 'text-ship-green' : 'text-green-400'} />
+                <div>
+                  <div className="font-bold">Take the guided tour</div>
+                  <div className={`text-xs font-normal ${isStudio ? 'text-ink/60' : 'text-gray-400'}`}>2-minute walkthrough of everything</div>
+                </div>
+              </button>
+
+              {/* Option 2: What is GitHub */}
+              <button
+                onClick={() => { setShowWhat(true); setOpen(false); }}
+                className={`w-full flex items-center space-x-3 px-3 py-2.5 text-sm font-semibold text-left transition rounded-sm ${
+                  isStudio
+                    ? 'hover:bg-highlight-yellow text-ink'
+                    : 'hover:bg-gray-800 text-gray-200'
+                }`}
+              >
+                <BookOpen size={16} className={isStudio ? 'text-ai-blue' : 'text-blue-400'} />
+                <div>
+                  <div className="font-bold">What is GitHub?</div>
+                  <div className={`text-xs font-normal ${isStudio ? 'text-ink/60' : 'text-gray-400'}`}>Plain-English explanation</div>
+                </div>
+              </button>
+
+              {/* Option 3: Jump to pages */}
+              <div className={`border-t mt-1 pt-1 ${isStudio ? 'border-ink/10' : 'border-gray-800'}`}>
+                <div className={`px-3 py-1.5 text-xs font-bold uppercase tracking-widest ${isStudio ? 'text-ink/50' : 'text-gray-500'}`}>
+                  Jump to
+                </div>
+                {[
+                  { label: 'A project page', path: '/react/react', desc: 'files & code' },
+                  { label: 'A suggested change', path: '/react/react/pull/28271', desc: 'pull request' },
+                  { label: 'Team workspace', path: '/workspace', desc: 'live sessions' },
+                  { label: 'Community chat', path: '/discussions', desc: 'discussions' },
+                  { label: 'A profile', path: '/shadcn', desc: 'contributor page' },
+                ].map(item => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className={`flex items-center justify-between px-3 py-2 text-sm transition rounded-sm ${
+                      isStudio
+                        ? 'hover:bg-highlight-yellow text-ink'
+                        : 'hover:bg-gray-800 text-gray-300'
+                    }`}
+                  >
+                    <span className="font-medium">{item.label}</span>
+                    <span className={`text-xs ${isStudio ? 'text-ink/40' : 'text-gray-500'}`}>{item.desc}</span>
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* The ? button itself */}
+        <motion.button
+          onClick={() => setOpen(prev => !prev)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          aria-label="Help"
+          className={`w-12 h-12 flex items-center justify-center transition ${
+            open
+              ? isStudio
+                ? 'bg-ink text-paper-warm border-2 border-ink shadow-none'
+                : 'bg-gray-600 text-white rounded-full'
+              : isStudio
+                ? 'bg-highlight-yellow text-ink border-2 border-ink shadow-[3px_3px_0px_0px_rgba(10,10,10,1)] hover:translate-y-px hover:shadow-none'
+                : 'bg-[#238636] hover:bg-[#2ea043] text-white rounded-full shadow-lg'
+          }`}
+        >
+          {open ? <X size={20} /> : <HelpCircle size={22} />}
+        </motion.button>
+      </div>
+    </>
   );
 }
 
@@ -453,9 +635,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       <GraduationModal />
       <PeekModal />
 
+      {/* Always-visible help button */}
+      <HelpButton />
+
       <footer className={`py-8 text-center text-xs mt-auto relative z-0 transition-colors ${lens === 'classic' ? 'text-gray-500 border-t border-gray-800/30' : 'text-ink/60 border-t-2 border-ink/20 font-people bg-paper-warm'}`}>
-        Concept demo. Not affiliated with GitHub, Inc. <br/>
-        <span className="opacity-60">Preserving Trust. Widening the Workshop.</span>
+        This is a concept demo — not the real GitHub, not affiliated with GitHub, Inc. <br/>
+        <span className="opacity-60">Just a vision of what could be. Click anything — it's all safe to explore.</span>
       </footer>
     </div>
   );

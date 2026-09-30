@@ -155,18 +155,18 @@ function StudioWorkspace() {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
         <div>
           <div className="inline-block bg-highlight-yellow text-ink border-2 border-ink px-3 py-0.5 text-xs font-bold uppercase tracking-widest mb-3">
-            Command Center
+            Team Hub
           </div>
           <h1 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-ink">
             The Shared Workshop
           </h1>
           <p className="text-base text-ink/70 font-medium mt-1">
-            Live collaborative sessions, shared memory streams, and concurrent maintainer presence.
+            See what your whole team is working on right now — live sessions, projects in progress, and who's online.
           </p>
         </div>
 
         <button
-          onClick={() => addToast('Initialized New Collaborative Space', 'info')}
+          onClick={() => addToast('Started a new live session — invite your team!', 'info')}
           className="bg-ink text-paper-warm px-5 py-3 font-bold uppercase tracking-wider text-xs border-2 border-ink shadow-[4px_4px_0px_0px_rgba(10,10,10,1)] hover:translate-y-0.5 hover:shadow-none transition flex items-center justify-center space-x-2"
         >
           <Sparkles size={16} />
@@ -178,7 +178,7 @@ function StudioWorkspace() {
       <div className="mb-10">
         <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-ink/60 mb-3">
           <Radio size={16} className="text-diff-red animate-pulse" />
-          <span>Active Pairing & Review Streams ({workspaceData.activeSessions.length} Live)</span>
+          <span>Live right now — {workspaceData.activeSessions.length} sessions in progress</span>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -211,7 +211,7 @@ function StudioWorkspace() {
 
                   {/* Active Participants Avatar Stack */}
                   <div className="mb-4">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-ink/50 mb-1.5">Participants</div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-ink/50 mb-1.5">Who's in this session</div>
                     <div className="flex items-center space-x-2">
                       {sess.activeParticipants.map(p => (
                         <div key={p.login} className="flex items-center space-x-1 bg-paper-warm border border-ink px-2 py-1 rounded-sm">
@@ -233,13 +233,13 @@ function StudioWorkspace() {
                         : 'bg-ink text-paper-warm shadow-[2px_2px_0px_0px_rgba(10,10,10,1)] hover:translate-y-0.5 hover:shadow-none'
                     }`}
                   >
-                    {isJoined ? 'Connected (Leave)' : 'Join Stream'}
+                    {isJoined ? "You're in (Leave)" : 'Jump in'}
                   </button>
                   {sess.prOrIssueId && (
                     <Link
                       to="/react/react/pull/28271"
                       className="px-3 py-2 bg-white border-2 border-ink text-ink font-bold text-xs shadow-[2px_2px_0px_0px_rgba(10,10,10,1)] hover:translate-y-0.5 hover:shadow-none transition flex items-center"
-                      title="Inspect PR"
+                      title="View the change being discussed"
                     >
                       <ArrowUpRight size={14} />
                     </Link>
@@ -254,7 +254,7 @@ function StudioWorkspace() {
       {/* Two Column Layout: Managed Projects & Live Team Presence */}
       <div className="grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
-          <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-3">// Monorepo Fabric</div>
+          <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-3">Projects your team is working on</div>
           <div className="space-y-4">
             {workspaceData.pinnedProjects.map(proj => (
               <div
@@ -275,7 +275,7 @@ function StudioWorkspace() {
 
                 <div className="text-right flex-shrink-0">
                   <span className="font-display font-black text-lg text-ink block">{proj.pendingReviews}</span>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink/60">Pending Reviews</span>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-ink/60">changes waiting for review</span>
                 </div>
               </div>
             ))}
@@ -283,7 +283,7 @@ function StudioWorkspace() {
         </div>
 
         <div>
-          <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-3">// Maintainer Roster</div>
+          <div className="text-xs font-bold uppercase tracking-widest text-ink/60 mb-3">Who's online now</div>
           <div className="bg-white border-2 border-ink p-4 shadow-[4px_4px_0px_0px_rgba(10,10,10,1)] space-y-3">
             {workspaceData.teamMembers.map(m => (
               <div key={m.login} className="flex items-center justify-between py-1 border-b border-ink/10 last:border-0">
@@ -302,7 +302,7 @@ function StudioWorkspace() {
                 <span className={`text-[10px] font-black uppercase px-1.5 py-0.5 border border-ink ${
                   m.isOnline ? 'bg-highlight-yellow text-ink' : 'bg-gray-100 text-gray-500'
                 }`}>
-                  {m.isOnline ? 'Pairing' : 'Idle'}
+                  {m.isOnline ? 'Active' : 'Away'}
                 </span>
               </div>
             ))}
